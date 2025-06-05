@@ -1,0 +1,71 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Lesson Creation and Structuring Rules
+
+## Critical Rules
+
+### I. Mục tiêu và Đối tượng (Objectives and Target Audience)
+
+-   **Mục tiêu Bài học (Learning Objectives):**
+    -   Phải xác định rõ ràng những gì người học sẽ biết hoặc có thể làm được sau khi hoàn thành bài học (ví dụ: "Sau bài học này, bạn có thể giải thích được nguyên lý hoạt động của X và ứng dụng Y vào giải quyết vấn đề Z").
+    -   Mục tiêu nên tuân theo tiêu chí SMART: Cụ thể (Specific), Đo lường được (Measurable), Có thể đạt được (Achievable), Liên quan (Relevant), và có Giới hạn thời gian (Time-bound).
+-   **Đối tượng Người học (Target Audience):**
+    -   Phải phân tích rõ ràng trình độ hiện tại, kiến thức nền tảng và nhu cầu cụ thể của đối tượng người học để điều chỉnh nội dung, thuật ngữ và ví dụ cho phù hợp.
+
+### II. Cấu trúc và Nội dung (Structure and Content)
+
+-   **Phần Dẫn nhập (Introduction):**
+    -   Nêu bật lý do ra đời của công nghệ/chủ đề được đề cập.
+    -   Kể câu chuyện về quá trình hình thành và phát triển.
+    -   Giới thiệu về người sáng lập hoặc những cá nhân/tổ chức chủ chốt.
+-   **Điều kiện Tiên quyết (Prerequisites):**
+    -   Liệt kê cụ thể những kiến thức, kỹ năng, hoặc công cụ mà người học cần có hoặc chuẩn bị trước khi bắt đầu bài học.
+-   **Tổng quan Bài học (Lesson Overview/Agenda):**
+    -   Cung cấp một cái nhìn tổng quan, một lộ trình rõ ràng về những nội dung chính sẽ được đề cập trong bài học và thứ tự trình bày của chúng.
+-   **Phần Khái niệm (Core Concepts):**
+    -   Đảm bảo cung cấp đầy đủ tất cả các khái niệm cốt lõi và cần thiết để người học có thể đạt được mục tiêu đã đề ra của buổi học.
+    -   Các khái niệm cần được giải thích một cách logic, dễ hiểu, đi từ những điều cơ bản đến phức tạp hơn.
+-   **Minh họa và Ví dụ (Illustrations and Examples):**
+    -   Sử dụng đa dạng các ví dụ minh họa cụ thể, các tình huống thực tế, hoặc các case study điển hình để người học dễ dàng hình dung và liên hệ kiến thức với thực tiễn.
+    -   Khuyến khích sử dụng các phương tiện trực quan như sơ đồ, biểu đồ, hình ảnh chất lượng cao để làm rõ các thông tin phức tạp.
+-   **Hoạt động Thực hành (Hands-on Activities/Exercises):**
+    -   Thiết kế các bài tập, câu hỏi thảo luận, hoặc hoạt động thực hành để người học có cơ hội áp dụng ngay những kiến thức vừa được học.
+    -   Cung cấp hướng dẫn rõ ràng cho các hoạt động và nên có phần giải đáp, đáp án hoặc gợi ý giải pháp.
+-   **Phần Ứng dụng và Mở rộng (Application and Extension):**
+    -   Phân tích sâu sắc bối cảnh ứng dụng hiện tại (ví dụ: tại thời điểm 2025) để người học có được bức tranh tổng thể về hiện trạng.
+    -   Đưa ra những phân tích, nhận định và dự đoán có cơ sở về các xu hướng phát triển hoặc ứng dụng trong tương lai.
+-   **Tóm tắt và Tổng kết (Summary and Conclusion):**
+    -   Cuối mỗi bài học, cần có phần tóm tắt lại những nội dung, ý chính quan trọng nhất đã được trình bày.
+    *   Khuyến khích hoặc gợi mở những hướng tìm hiểu sâu hơn, các chủ đề liên quan, hoặc cách thức người học có thể tiếp tục phát triển kiến thức và kỹ năng sau bài học.
+
+### III. Chất lượng và Trình bày (Quality and Presentation)
+
+-   **Ngôn ngữ và Thuật ngữ (Language and Terminology):**
+    -   Sử dụng ngôn ngữ trong sáng, chính xác, mạch lạc và nhất quán trong toàn bộ bài học.
+    -   Nếu sử dụng các thuật ngữ chuyên ngành hoặc từ viết tắt, cần đảm bảo chúng được giải thích rõ ràng ngay lần đầu xuất hiện.
+-   **Tính Tương tác và Hấp dẫn (Engagement):**
+    -   Kết hợp linh hoạt nhiều phương pháp truyền tải thông tin (văn bản, hình ảnh, video, câu đố, thảo luận) để bài học trở nên sinh động và thu hút hơn.
+    -   Đặt các câu hỏi mở, các tình huống thử thách để kích thích tư duy phản biện và sự chủ động của người học.
+-   **Tài liệu Tham khảo (References/Further Reading):**
+    -   Cung cấp danh mục các tài liệu tham khảo, nguồn trích dẫn đáng tin cậy đã được sử dụng để xây dựng nội dung bài học.
+    -   Đề xuất các sách, bài báo, website, hoặc khóa học hữu ích khác để người học có thể tự nghiên cứu và tìm hiểu sâu hơn về chủ đề.
+-   **Tính Cập nhật (Up-to-dateness):**
+    -   Đảm bảo rằng nội dung, số liệu, ví dụ (đặc biệt trong các lĩnh vực thay đổi nhanh như công nghệ) được cập nhật thường xuyên để phản ánh tình hình mới nhất và chính xác nhất.
+-   **Kiểm tra và Đánh giá (Review and Assessment):**
+    -   Có thể bao gồm các câu hỏi tự kiểm tra, bài quiz nhỏ xen kẽ hoặc cuối bài để người học tự đánh giá mức độ hiểu bài của mình.
+    -   Thiết lập quy trình xem xét, thu thập phản hồi từ người học hoặc đồng nghiệp để liên tục cải thiện chất lượng bài học.
+
+## Examples
+
+<example>
+User: "Hãy giúp tôi phác thảo một bài học giới thiệu về Blockchain cho người mới bắt đầu."
+Agent: (Sau khi xác nhận việc áp dụng lesson-rules) "Tuyệt vời! Để tạo bài học về Blockchain cho người mới, chúng ta sẽ bắt đầu bằng việc xác định mục tiêu cụ thể mà người học cần đạt được. Sau đó, chúng ta sẽ xây dựng phần dẫn nhập về lý do Blockchain ra đời, các khái niệm cốt lõi như khối, chuỗi, mã hóa, sổ cái phi tập trung, minh họa bằng các ví dụ như Bitcoin. Tiếp theo là phần ứng dụng trong các lĩnh vực khác nhau và tiềm năng tương lai. Cuối cùng sẽ có tóm tắt và gợi ý tài liệu đọc thêm. Bạn muốn người học hiểu được những khía cạnh nào của Blockchain sau bài học này?"
+</example>
+
+<example type="invalid">
+User: "Nói cho tôi vài điều về React."
+Agent: (Không áp dụng lesson-rules, chỉ cung cấp thông tin chung chung) "React là một thư viện JavaScript dùng để xây dựng giao diện người dùng..."
+</example>

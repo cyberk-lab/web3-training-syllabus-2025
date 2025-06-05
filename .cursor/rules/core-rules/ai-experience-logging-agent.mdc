@@ -1,0 +1,82 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# AI Experience and Best Practice Logging
+
+## Critical Rules
+
+1.  **Mục đích Ghi nhận (Purpose of Logging):**
+    *   Tất cả các ghi nhận kinh nghiệm nhằm mục đích giúp AI (là tôi) cải thiện hiệu suất, đưa ra quyết định tốt hơn, và áp dụng các giải pháp hiệu quả trong các tương tác và nhiệm vụ sau này.
+    *   Nội dung ghi nhận phải có tiềm năng tái sử dụng hoặc tham khảo hữu ích.
+
+2.  **Thời điểm Ghi nhận (When to Log):**
+    *   Sau khi giải quyết thành công một vấn đề phức tạp hoặc mới lạ.
+    *   Khi phát hiện ra một "Do" (nên làm) hoặc "Don't" (không nên làm / cần tránh) quan trọng.
+    *   Khi một quy ước chung của dự án được làm rõ hoặc thiết lập.
+    *   Khi nhận được phản hồi từ người dùng về một cách tiếp cận hiệu quả hoặc không hiệu quả.
+    *   Khi một "bài học kinh nghiệm" (lesson learned) được rút ra.
+
+3.  **Phân loại Ghi nhận (Categorization):**
+    *   **Ghi chú chung cho dự án (General Project Notes):** Các thông tin, quy ước, hoặc bối cảnh chung của dự án mà AI cần nhớ.
+        *   *Ví dụ:* "Dự án X ưu tiên sử dụng thư viện Y cho việc xử lý Z."
+    *   **Kinh nghiệm Nên & Không nên (Know-how: Do's and Don'ts):** Các hướng dẫn cụ thể về các hành động nên thực hiện hoặc cần tránh.
+        *   *Ví dụ (Do):* "Khi refactor code React, luôn ưu tiên chia nhỏ components thành các đơn vị nhỏ hơn, dễ quản lý."
+        *   *Ví dụ (Don't):* "Không nên gọi API trực tiếp từ trong vòng lặp render của một component mà không có cơ chế kiểm soát (ví dụ: `useEffect` với dependency array phù hợp) để tránh gọi API vô hạn."
+    *   **Giải pháp/Kỹ thuật (Solutions/Techniques):** Mô tả ngắn gọn về một giải pháp hoặc kỹ thuật cụ thể đã được áp dụng thành công.
+        *   *Ví dụ:* "Sử dụng `Promise.allSettled` để xử lý nhiều promise song song khi cần kết quả của tất cả, bất kể thành công hay thất bại."
+
+4.  **Nội dung Ghi nhận (Content of Log):**
+    *   **Ngắn gọn và Xúc tích:** Thông tin phải được trình bày một cách cô đọng, đi thẳng vào vấn đề. Tránh diễn giải dài dòng, không cần thiết.
+    *   **Hành động được (Actionable):** Nếu là một "Do" hoặc "Don't", nó nên gợi ý một hành động cụ thể.
+    *   **Bối cảnh (Context - nếu cần):** Cung cấp đủ bối cảnh tối thiểu để hiểu được ghi nhận, nhưng không quá chi tiết. Ví dụ: "Trong bối cảnh tối ưu hiệu năng cho API [tên_API]..."
+    *   **Từ khóa (Keywords):** Sử dụng các từ khóa liên quan để dễ dàng tìm kiếm và tham chiếu sau này.
+
+5.  **Định dạng Ghi nhận (Logging Format - gợi ý cho AI):**
+    *   Khi AI tự ghi nhận, có thể sử dụng một cấu trúc đơn giản như:
+        *   `**Loại:** [General Note / Do / Don't / Solution]`
+        *   `**Chủ đề/Từ khóa:** [ngắn gọn]`
+        *   `**Nội dung:** [mô tả xúc tích]`
+        *   `**Bối cảnh (nếu có):** [ngắn gọn]`
+
+## Examples
+
+<example>
+**Tình huống:** AI vừa hoàn thành việc tối ưu một câu truy vấn SQL phức tạp cho người dùng, giúp giảm thời gian phản hồi đáng kể.
+**Hành động (AI tự ghi nhận theo rule):**
+AI tự ghi nhận một kinh nghiệm:
+`**Loại:** Solution`
+`**Chủ đề/Từ khóa:** SQL Optimization, Query Performance, Indexing`
+`**Nội dung:** Với các truy vấn JOIN trên bảng lớn và có điều kiện WHERE phức tạp, việc kiểm tra và thêm INDEX phù hợp trên các cột được JOIN và cột trong WHERE đã cải thiện hiệu năng từ 10s xuống còn 500ms.`
+`**Bối cảnh:** Dự án CRM, module báo cáo khách hàng.`
+
+*Lý do:* Ghi nhận này ngắn gọn, xúc tích, nêu rõ giải pháp và kết quả, có từ khóa và bối cảnh, hữu ích cho các tác vụ tối ưu SQL sau này.
+</example>
+
+<example>
+**Tình huống:** Trong quá trình hỗ trợ người dùng debug một lỗi liên quan đến việc cập nhật state không đồng bộ trong React, AI nhận ra một lỗi sai phổ biến.
+**Hành động (AI tự ghi nhận theo rule):**
+AI tự ghi nhận một kinh nghiệm:
+`**Loại:** Don't`
+`**Chủ đề/Từ khóa:** React, State Update, Asynchronous, Pitfall`
+`**Nội dung:** Không nên giả định state sẽ được cập nhật ngay lập tức sau khi gọi hàm `setState`. Nếu cần thực hiện hành động dựa trên state mới, hãy sử dụng callback của `setState` (trong class components) hoặc `useEffect` với dependency là state đó (trong functional components).`
+
+*Lý do:* Đây là một "Don't" quan trọng, ngắn gọn, và có tính ứng dụng cao trong việc phát triển React.
+</example>
+
+<example type="invalid">
+**Tình huống:** AI giúp người dùng sửa một lỗi cú pháp nhỏ trong code.
+**Hành động (AI ghi nhận không theo rule):**
+AI ghi: "Hôm nay tôi đã giúp người dùng sửa một lỗi thiếu dấu chấm phẩy ở dòng 23 trong file script.js. Người dùng có vẻ rất vui. Việc này cho thấy tầm quan trọng của việc kiểm tra kỹ code trước khi chạy. Tôi nghĩ rằng mình nên cẩn thận hơn khi xem code. Đây là một bài học quý giá về sự tỉ mỉ trong lập trình."
+
+*Lý do:* Ghi nhận quá dài dòng cho một vấn đề nhỏ, không mang lại "know-how" có giá trị tái sử dụng cao, không phân loại rõ ràng.
+</example>
+
+<example type="invalid">
+**Tình huống:** AI tìm hiểu về một thư viện mới.
+**Hành động (AI ghi nhận không theo rule):**
+AI sao chép toàn bộ phần "Getting Started" của tài liệu thư viện vào ghi chú của mình.
+
+*Lý do:* Không ngắn gọn, xúc tích. Mục đích của việc ghi nhận là kinh nghiệm và "know-how", không phải là sao chép tài liệu có sẵn. Nên ghi lại những điểm chính, lưu ý đặc biệt hoặc kinh nghiệm khi áp dụng thư viện đó.
+</example>

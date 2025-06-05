@@ -1,0 +1,144 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Smart Contract Interaction Rules
+
+## Critical Rules
+
+- MUST use ethers.js v6 for all smart contract interactions
+- MUST implement proper error handling for blockchain transactions
+- MUST include gas estimation and management
+- MUST implement proper transaction confirmation handling
+- MUST use TypeScript for type safety
+- MUST implement proper event handling and listening
+- MUST follow the following contract interaction structure:
+  ```
+  [Entity][Action]Contract
+  Example: TokenTransferContract, UserRegistrationContract
+  ```
+
+## Implementation Guidelines
+
+### Contract Interaction Structure
+```typescript
+export class [Entity][Action]Contract {
+  private contract: Contract;
+  private signer: Signer;
+
+  constructor(address: string, abi: any[], signer: Signer) {
+    this.contract = new Contract(address, abi, signer);
+    this.signer = signer;
+  }
+
+  async [action](params: Params): Promise<TransactionResponse> {
+    try {
+      const tx = await this.contract[action](params);
+      return await tx.wait();
+    } catch (error) {
+      // Handle specific contract errors
+      throw this.handleContractError(error);
+    }
+  }
+}
+```
+
+### Error Handling
+- MUST implement specific error handling for:
+  - Transaction failures
+  - Gas estimation failures
+  - Network errors
+  - Contract-specific errors
+- MUST provide meaningful error messages
+- MUST implement proper error recovery strategies
+
+### Gas Management
+- MUST implement proper gas estimation
+- MUST handle gas price fluctuations
+- MUST implement gas limit safety checks
+- MUST provide gas optimization strategies
+
+### Event Handling
+- MUST implement proper event listeners
+- MUST handle event filtering
+- MUST implement proper event cleanup
+- MUST handle event confirmation
+
+### Type Safety
+- MUST define proper TypeScript interfaces for:
+  - Contract parameters
+  - Transaction responses
+  - Event data
+  - Error types
+
+## Examples
+
+<example>
+```typescript
+// Good implementation
+export class TokenTransferContract {
+  private contract: Contract;
+  private signer: Signer;
+
+  constructor(address: string, abi: any[], signer: Signer) {
+    this.contract = new Contract(address, abi, signer);
+    this.signer = signer;
+  }
+
+  async transfer(to: string, amount: BigNumber): Promise<TransactionResponse> {
+    try {
+      const gasEstimate = await this.contract.transfer.estimateGas(to, amount);
+      const tx = await this.contract.transfer(to, amount, {
+        gasLimit: gasEstimate.mul(120).div(100) // 20% buffer
+      });
+      return await tx.wait();
+    } catch (error) {
+      throw this.handleContractError(error);
+    }
+  }
+
+  private handleContractError(error: any): Error {
+    // Implement specific error handling
+    return new Error(`Transfer failed: ${error.message}`);
+  }
+}
+```
+</example>
+
+<example type="invalid">
+```typescript
+// Bad implementation - missing error handling and gas management
+export class TokenContract {
+  async transfer(to: string, amount: number) {
+    return this.contract.transfer(to, amount);
+  }
+}
+```
+</example>
+
+## Best Practices
+
+1. **Contract Interaction**
+   - Use proper contract abstraction
+   - Implement proper parameter validation
+   - Handle transaction confirmation
+   - Implement proper event handling
+
+2. **Error Handling**
+   - Implement specific error types
+   - Provide meaningful error messages
+   - Handle network errors
+   - Implement retry logic
+
+3. **Gas Management**
+   - Implement proper gas estimation
+   - Handle gas price fluctuations
+   - Implement gas limit safety checks
+   - Provide gas optimization strategies
+
+4. **Type Safety**
+   - Define proper interfaces
+   - Use proper type inference
+   - Handle nullable/optional fields
+   - Implement proper type guards

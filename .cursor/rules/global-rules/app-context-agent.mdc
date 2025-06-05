@@ -1,0 +1,83 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# App Context Verification Rule
+
+## Critical Rules
+
+- MUST identify the target app context before proceeding with any code generation or modification
+- MUST verify app context against the following structure:
+  ```
+  helix-prime/
+  ├── apps/
+  │   ├── admin-fe/        # Admin Frontend Application
+  │   ├── be/             # Backend Services
+  │   ├── cdk/            # AWS CDK Infrastructure
+  │   ├── contract/       # Smart Contracts
+  │   ├── investor-fe/    # Investor Frontend Application
+  │   └── landing/        # Landing Page Application
+  
+  helix-hub/
+  ├── apps/
+  │   ├── helix-hub-fe/   # Helix Hub Frontend Application
+  │   ├── be/             # Backend Services
+  │   ├── cdk/            # AWS CDK Infrastructure
+  │   └── contract/       # Smart Contracts
+  ```
+- MUST explicitly ask the user to confirm app context if it cannot be determined from the request
+- MUST confirm the identified app context with the user before proceeding with any code generation
+- MUST use the following context identification process:
+  1. Check if request explicitly mentions an app name
+  2. Check if request implies a specific context (e.g., "admin dashboard" implies admin-fe)
+  3. Check if request relates to specific functionality (e.g., "smart contract" implies contract/)
+  4. If context is ambiguous, ask user to specify
+- MUST maintain consistent path structure based on identified app context
+- MUST ensure shared code goes into appropriate packages directory
+
+## Context Identification Guidelines
+
+### Helix Prime Apps
+- **admin-fe**: Administrative interface, dashboard, management features
+- **be**: Backend services, APIs, data processing for Prime
+- **cdk**: AWS infrastructure for Prime
+- **contract**: Smart contracts for Prime platform
+- **investor-fe**: Investor-facing interface, investment features
+- **landing**: Public website, marketing pages
+
+### Helix Hub Apps
+- **helix-hub-fe**: Main Hub interface
+- **be**: Hub-specific backend services
+- **cdk**: Hub infrastructure
+- **contract**: Hub-specific smart contracts
+
+### Shared Package Context
+- If code is reusable across apps, direct to appropriate package:
+  - UI components → ui/
+  - Utility functions → helpers/
+  - Core business logic → libs/
+  - Configuration → typescript-config/ or eslint-config/
+
+## Examples
+
+<example>
+User: "Create a new dashboard component for the admin interface"
+Agent: "I'll be working in the helix-prime/apps/admin-fe directory for this dashboard component. Would you like me to proceed with creating the component in this location?"
+</example>
+
+<example>
+User: "Add a new API endpoint for user data"
+Agent: "I notice this request could apply to either helix-prime/apps/be or helix-hub/apps/be. Could you specify which backend service this API endpoint is for?"
+</example>
+
+<example type="invalid">
+User: "Create a new component"
+Agent: *Proceeds without confirming app context*
+</example>
+
+<example type="invalid">
+User: "Add a smart contract"
+Agent: *Assumes helix-prime without confirmation*
+</example> 

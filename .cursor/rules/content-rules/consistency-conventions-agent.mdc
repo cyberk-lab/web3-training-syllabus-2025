@@ -1,0 +1,86 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Quy ước và Quy trình Kiểm tra Tính Đồng nhất
+
+## I. Các Quy ước Chính về Tính Đồng nhất
+
+1.  **Ngôn ngữ Tiếng Việt:**
+    *   **Ưu tiên hàng đầu:** Tất cả nội dung phải sử dụng Tiếng Việt trong sáng, mạch lạc, dễ hiểu.
+    *   **Cấu trúc câu:** Rõ ràng, ngữ pháp chuẩn. Tránh câu cú phức tạp, tối nghĩa.
+    *   Tham khảo quy tắc `document-consistency-agent.mdc` cho các chi tiết cụ thể về diễn đạt và trình bày.
+
+2.  **Xử lý Từ khóa (Keywords):**
+    *   **Giữ nguyên gốc:** Các thuật ngữ kỹ thuật, tên công nghệ, APIs, hoặc các "keyword" cốt lõi (thường là tiếng Anh) phải được giữ nguyên. Không dịch sang Tiếng Việt nếu việc đó làm mất tính chính xác hoặc tính phổ quát.
+    *   **Giải thích (nếu cần):** Khi keyword xuất hiện lần đầu hoặc trong ngữ cảnh cần làm rõ, có thể kèm theo giải thích ngắn bằng Tiếng Việt trong ngoặc đơn. Ví dụ: `repository (kho chứa mã nguồn)`.
+    *   Tham khảo quy tắc `document-consistency-agent.mdc`.
+
+3.  **Định dạng và Trình bày:**
+    *   **Dễ đọc:** Sử dụng bullet points, numbered lists, hoặc chia nhỏ đoạn văn cho các ý dài hoặc liệt kê.
+    *   **Nhất quán Style:** Duy trì sự nhất quán về cách sử dụng tiêu đề (headings), in đậm, in nghiêng, `code blocks`, trích dẫn, v.v. trong một tài liệu và giữa các tài liệu liên quan (nếu có).
+    *   **Ví dụ và Chú thích:** Các ví dụ, ghi chú, cảnh báo cần có định dạng thống nhất để dễ nhận biết.
+
+4.  **Thuật ngữ Chuyên ngành (Terminology):**
+    *   **Sử dụng nhất quán:** Nếu một thuật ngữ (dù là keyword giữ nguyên hay một cụm từ Tiếng Việt đã được thống nhất sử dụng) được chọn, nó phải được dùng xuyên suốt. Tránh dùng nhiều từ đồng nghĩa cho cùng một khái niệm nếu không thực sự cần thiết và có thể gây nhầm lẫn.
+
+5.  **Phong cách Viết (Tone and Style):**
+    *   Xác định và duy trì một giọng văn (tone) phù hợp với đối tượng độc giả và mục đích của tài liệu (ví dụ: trang trọng, thân mật, kỹ thuật).
+    *   Đảm bảo phong cách viết nhất quán.
+
+## II. Quy trình/Checklist Kiểm tra Tính Đồng nhất
+
+Khi tạo mới hoặc rà soát tài liệu, hãy sử dụng checklist sau để đảm bảo tính đồng nhất:
+
+1.  **Ngôn ngữ & Diễn đạt:**
+    *   [ ] Ngôn ngữ Tiếng Việt có rõ ràng, mạch lạc không?
+    *   [ ] Có câu nào tối nghĩa hoặc quá phức tạp không cần thiết không?
+    *   [ ] Các đoạn văn dài đã được chia nhỏ hoặc dùng bullet points hợp lý chưa?
+
+2.  **Từ khóa (Keywords):**
+    *   [ ] Tất cả các keyword kỹ thuật có được giữ nguyên gốc không?
+    *   [ ] Có keyword nào bị dịch một cách không cần thiết hoặc không chính xác không?
+    *   [ ] Những keyword cần giải thích đã có giải thích ngắn gọn, nhất quán chưa?
+
+3.  **Thuật ngữ Chuyên ngành:**
+    *   [ ] Các thuật ngữ chuyên ngành có được sử dụng nhất quán trong toàn bộ tài liệu không?
+    *   [ ] Có trường hợp nào sử dụng các từ đồng nghĩa khác nhau cho cùng một khái niệm gây khó hiểu không?
+
+4.  **Định dạng và Trình bày:**
+    *   [ ] Định dạng tiêu đề, danh sách, nhấn mạnh (đậm, nghiêng), code có nhất quán không?
+    *   [ ] Các ví dụ, hình ảnh, bảng biểu có được trình bày rõ ràng và thống nhất không?
+
+5.  **Phong cách Viết:**
+    *   [ ] Giọng văn có phù hợp và nhất quán không?
+    *   [ ] Có sự thay đổi đột ngột về phong cách viết trong tài liệu không?
+
+6.  **Tham chiếu Chéo (Cross-references - nếu có):**
+    *   [ ] Các tham chiếu đến các phần khác trong tài liệu hoặc đến các tài liệu khác có chính xác và nhất quán về cách gọi tên/số hiệu không?
+
+7.  **Tính đầy đủ và Cập nhật (cho toàn bộ hệ thống tài liệu - nếu áp dụng):**
+    *   [ ] Thuật ngữ và quy ước này có được áp dụng cho tất cả các tài liệu liên quan không?
+    *   [ ] Có cần cập nhật các tài liệu cũ hơn để phù hợp với quy ước mới không?
+
+## Examples
+
+<example>
+**Tình huống:** Rà soát một chương tài liệu kỹ thuật mới viết.
+**Hành động:**
+Người viết/reviewer mở rule `consistency-conventions-agent.mdc`.
+1.  Đọc qua mục "I. Các Quy ước Chính về Tính Đồng nhất" để nhắc lại các tiêu chuẩn.
+2.  Tuần tự đi qua từng mục trong "II. Quy trình/Checklist Kiểm tra Tính Đồng nhất", đánh dấu tick vào từng mục khi kiểm tra trên tài liệu.
+    *   Ví dụ, kiểm tra mục "Từ khóa (Keywords)": "Tất cả các keyword kỹ thuật như `API`, `function`, `variable`, `blockchain` đều được giữ nguyên, không bị dịch. Rất tốt."
+    *   Kiểm tra mục "Định dạng": "Các khối lệnh (`code block`) đều dùng chung một style, dễ đọc. Các cảnh báo (warning) được đóng khung màu vàng nhất quán."
+3.  Nếu phát hiện điểm chưa nhất quán, ghi chú lại để sửa đổi.
+</example>
+
+<example type="invalid">
+**Tình huống:** Một người mới tham gia vào việc viết tài liệu và được yêu cầu đảm bảo "viết cho nó dễ hiểu".
+**Hành động (không hiệu quả):**
+Người đó chỉ tập trung vào việc dùng từ ngữ đơn giản mà không tham khảo các quy ước cụ thể về keyword, định dạng, hay sử dụng checklist kiểm tra. Kết quả là tài liệu có thể dễ hiểu ở vài chỗ nhưng lại thiếu nhất quán với các tài liệu khác, keyword bị dịch sai, định dạng lộn xộn.
+Ví dụ:
+*   Chỗ thì viết "API", chỗ thì cố dịch thành "giao diện lập trình ứng dụng".
+*   Đoạn code lúc thì thụt đầu dòng 2 space, lúc thì 4 space.
+*   Không có checklist để rà soát một cách có hệ thống.
+</example>

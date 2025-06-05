@@ -1,0 +1,107 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Fetch Data Query Hook Rules
+
+## Critical Rules
+
+- MUST use React Query (TanStack Query) for all data fetching operations
+- MUST follow the following hook naming convention:
+  ```
+  use[Entity][Action]Query
+  Example: useUserProfileQuery, useTransactionListQuery
+  ```
+- MUST implement proper error handling and loading states
+- MUST include TypeScript types for query response data
+- MUST use appropriate query keys following the structure:
+  ```
+  [entity, id?, action?]
+  Example: ['user', userId, 'profile']
+  ```
+- MUST implement proper cache invalidation strategies
+- MUST handle pagination when dealing with list data
+- MUST implement proper retry logic for failed requests
+
+## Implementation Guidelines
+
+### Query Hook Structure
+```typescript
+export const use[Entity][Action]Query = (
+  params: QueryParams,
+  options?: UseQueryOptions
+) => {
+  return useQuery({
+    queryKey: [entity, params.id, action],
+    queryFn: () => fetchData(params),
+    ...options
+  });
+};
+```
+
+### Error Handling
+- MUST implement proper error boundaries
+- MUST provide meaningful error messages
+- MUST handle network errors gracefully
+- MUST implement retry logic for transient failures
+
+### Cache Management
+- MUST implement proper cache time settings
+- MUST handle cache invalidation on mutations
+- MUST implement optimistic updates where appropriate
+- MUST handle stale data appropriately
+
+### Type Safety
+- MUST define proper TypeScript interfaces for:
+  - Query parameters
+  - Response data
+  - Error types
+- MUST use proper type inference for query results
+
+## Examples
+
+<example>
+```typescript
+// Good implementation
+export const useUserProfileQuery = (userId: string) => {
+  return useQuery({
+    queryKey: ['user', userId, 'profile'],
+    queryFn: () => fetchUserProfile(userId),
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    retry: 3
+  });
+};
+```
+</example>
+
+<example type="invalid">
+```typescript
+// Bad implementation - missing types and error handling
+export const useProfile = (id) => {
+  return useQuery(['profile', id], fetchProfile);
+};
+```
+</example>
+
+## Best Practices
+
+1. **Query Keys**
+   - Use consistent key structure
+   - Include all relevant parameters
+   - Consider cache invalidation needs
+
+2. **Error Handling**
+   - Implement proper error boundaries
+   - Provide meaningful error messages
+   - Handle network errors gracefully
+
+3. **Performance**
+   - Implement proper caching strategies
+   - Use appropriate stale time settings
+   - Consider pagination for large datasets
+
+4. **Type Safety**
+   - Define proper TypeScript interfaces
+   - Use proper type inference
+   - Handle nullable/optional fields properly
