@@ -1,4 +1,4 @@
-# Thấu hiểu Blockchain - Làm chủ Tương Lai
+# Thấu hiểu Blockchain
 
 Chương trình đào tạo Web3 tổng quan, được thiết kế để giúp bạn nắm vững những khái niệm cốt lõi và bức tranh toàn cảnh của thế giới Web3.
 
@@ -54,8 +54,3 @@ Chương trình đào tạo Web3 tổng quan, được thiết kế để giúp 
 *   **Buổi 6: Bridge và LayerZero**
     *   Vấn đề tương tác giữa các Blockchain (Cross-chain).
     *   Bridge là gì? Các giải pháp kết nối đa chuỗi như LayerZero.
-
-*(Nội dung các buổi học được thiết kế dựa trên tài liệu "syllabus-overviews.md" để đảm bảo tính hệ thống và dễ tiếp cận cho người mới).*
-
-
-
