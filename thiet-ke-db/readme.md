@@ -2,14 +2,48 @@
 
 ## Overview - Tổng quan chương trình
 
-### Mục tiêu tổng thể
-Chương trình này được thiết kế để giúp học viên **thành thạo việc thiết kế cơ sở dữ liệu** cho các hệ thống quy mô vừa và nhỏ. Sau khi hoàn thành, học viên sẽ có khả năng:
+### 🎯 Mục tiêu tổng thể
+Chương trình này được thiết kế để giúp học viên **thành thạo việc thiết kế cơ sở dữ liệu cho các hệ thống vừa và nhỏ**. Sau khi hoàn thành **4 buổi học (mỗi buổi 1 tiếng)**, học viên sẽ có khả năng:
 
-- 🎯 **Phân tích yêu cầu** và xác định các thực thể, mối quan hệ trong hệ thống
-- 🏗️ **Thiết kế schema** tuân thủ các nguyên tắc RDBMS và chuẩn hóa dữ liệu
-- 📊 **Vẽ sơ đồ ERD** chuyên nghiệp để trình bày thiết kế
-- ⚡ **Tối ưu hiệu suất** database thông qua indexing và kiểm thử tải
-- 🔧 **Triển khai thực tế** với PostgreSQL và Prisma ORM trong môi trường Node.js/NestJS
+- **Phân tích yêu cầu** và xác định các thực thể, mối quan hệ trong hệ thống
+- **Thiết kế schema PostgreSQL** tuân thủ các nguyên tắc RDBMS và chuẩn hóa dữ liệu
+- **Vẽ sơ đồ ERD** chuyên nghiệp để làm tài liệu database relationship
+- **Áp dụng nguyên tắc thiết kế** SQL database hiệu quả cho PostgreSQL
+- **Triển khai thực tế** với PostgreSQL và Prisma ORM trong stack Node.js/NestJS/Next.js
+
+### 👥 Đối tượng người học
+**Lập trình viên Full-stack** với profile sau:
+- **Kinh nghiệm**: Tối thiểu 1 năm làm việc thực tế với web development
+- **Tech Stack**: Node.js, NestJS, Next.js (JavaScript/TypeScript)  
+- **Background**: Đã có kinh nghiệm cơ bản với SQL và database operations
+- **Nhu cầu**: Muốn nâng cao kỹ năng thiết kế database chuyên nghiệp cho dự án thực tế
+
+**Điều kiện tiên quyết:**
+- ✅ Biết SQL cơ bản (SELECT, INSERT, UPDATE, DELETE, JOIN)
+- ✅ Đã từng sử dụng PostgreSQL hoặc MySQL trong dự án
+- ✅ Có kinh nghiệm với một ORM (TypeORM, Sequelize, Prisma...)
+- ✅ Hiểu khái niệm cơ bản về REST API và backend development
+
+### 🎁 Lợi ích cho người học
+Sau khi hoàn thành khóa học, bạn sẽ:
+
+#### 💼 Lợi ích nghề nghiệp
+- **Tự tin thiết kế database** cho các dự án startup và SME
+- **Tăng giá trị** như một full-stack developer với deep database knowledge
+- **Giảm technical debt** trong các dự án hiện tại và tương lai
+- **Communicate hiệu quả** với team về database architecture decisions
+
+#### 🛠️ Kỹ năng thực tiễn
+- **Làm chủ quy trình** thiết kế database từ requirements đến production
+- **Tạo tài liệu ERD** chuyên nghiệp cho team và stakeholders  
+- **Tối ưu performance** với indexing và query optimization strategies
+- **Troubleshoot** các vấn đề database phổ biến trong production
+
+#### 🚀 Impact dài hạn
+- **Foundation vững chắc** cho việc học advanced topics (sharding, replication)
+- **Mindset scalability** cho database architecture trong growth startups
+- **Best practices** để maintain và scale database trong thực tế
+- **Confidence** để lead technical discussions về database trong team
 
 ### Lộ trình học tập
 ```
@@ -30,188 +64,19 @@ Chúng ta sẽ cùng xây dựng **hệ thống quản lý đơn hàng trực tu
 
 ## Buổi 1: Nền tảng thiết kế cơ sở dữ liệu quan hệ
 
-### 🎯 Mục tiêu học tập
-- Hiểu sâu các **nguyên tắc cốt lõi** của cơ sở dữ liệu quan hệ (RDBMS)
-- Nắm vững cách sử dụng **khóa chính** và **khóa ngoại** để tạo mối liên kết
-- Áp dụng **chuẩn hóa dữ liệu** (1NF, 2NF, 3NF) để tránh dư thừa
-- Chọn **kiểu dữ liệu** và **ràng buộc** phù hợp cho PostgreSQL
+📚 **Nội dung chi tiết:** [Lesson 1 - Nền tảng Thiết kế Database](./lesson-1.md)
 
-### 📋 Các nguyên tắc thiết kế database
+### 🎯 Tóm tắt buổi học
+- **Nắm vững tư duy thiết kế database** đúng đắn từ nguyên tắc đến thực hành  
+- **Áp dụng 10 nguyên tắc vàng** trong thiết kế database cho dự án thực tế
+- **Thực hiện quy trình 3 bước** để thiết kế database hiệu quả
+- **Phát triển intuition** để đưa ra quyết định thiết kế hợp lý
 
-Trước khi đi vào chi tiết kỹ thuật, hãy nắm vững **10 nguyên tắc vàng** trong thiết kế database:
-
-#### 1. 🚀 Nguyên tắc tối ưu hiệu suất (Performance-First Design)
-- **Thiết kế cho tốc độ query**: Ưu tiên các truy vấn thường dùng nhất
-- **Read-heavy optimization**: Tối ưu cho việc đọc dữ liệu (80% workload thường là SELECT)
-- **Minimize JOIN operations**: Giảm thiểu số lượng bảng cần join trong query quan trọng
-- **Consider query patterns**: Phân tích các pattern truy vấn trước khi thiết kế schema
-
-#### 2. 📊 Nguyên tắc chuẩn hóa có chọn lọc
-- **Start normalized**: Bắt đầu với thiết kế chuẩn hóa hoàn toàn
-- **Denormalize strategically**: Chỉ phi chuẩn hóa khi có lý do cụ thể về hiệu suất
-- **Document trade-offs**: Ghi chép lại lý do denormalization để maintain sau này
-- **Balance consistency vs speed**: Cân bằng giữa tính nhất quán và tốc độ
-
-#### 3. 🎯 Nguyên tắc thiết kế hướng tương lai (Future-Proof Design)
-- **Scalability mindset**: Thiết kế để có thể scale (horizontal/vertical)
-- **Extension friendly**: Dễ dàng thêm field, bảng mới mà không phá vỡ cấu trúc
-- **Version-aware**: Chuẩn bị cho việc migration và schema evolution
-- **Partition consideration**: Dự đoán nhu cầu phân vùng dữ liệu trong tương lai
-
-#### 4. 🔒 Nguyên tắc bảo mật và toàn vẹn dữ liệu
-- **Data integrity first**: Constraints, foreign keys để đảm bảo dữ liệu đúng
-- **Principle of least privilege**: Chỉ cấp quyền tối thiểu cần thiết
-- **Audit trail**: Thiết kế sẵn việc theo dõi thay đổi dữ liệu quan trọng
-- **Sensitive data handling**: Riêng biệt dữ liệu nhạy cảm (PII, payment info)
-
-#### 5. 🛠️ Nguyên tắc dễ bảo trì (Maintainability)
-- **Clear naming conventions**: Tên bảng, cột rõ ràng, nhất quán
-- **Self-documenting schema**: Thiết kế tự giải thích được mục đích
-- **Consistent patterns**: Sử dụng pattern nhất quán trong toàn bộ database
-- **Change management**: Có quy trình rõ ràng cho việc thay đổi schema
-
-#### 6. 💾 Nguyên tắc tối ưu lưu trữ
-- **Right-size data types**: Chọn kiểu dữ liệu vừa đủ, không lãng phí
-- **Storage efficiency**: Cân nhắc compression, partitioning cho bảng lớn
-- **Archive strategy**: Lên kế hoạch cho dữ liệu cũ (archive vs delete)
-- **Index strategy**: Index đúng chỗ, tránh over-indexing
-
-#### 7. 🔄 Nguyên tắc transaction và consistency
-- **ACID compliance**: Đảm bảo tính atomicity, consistency, isolation, durability
-- **Transaction boundaries**: Thiết kế transaction scope hợp lý
-- **Deadlock prevention**: Tránh thiết kế gây deadlock
-- **Concurrency handling**: Chuẩn bị cho multi-user access
-
-#### 8. 📈 Nguyên tắc monitoring và observability
-- **Query performance tracking**: Thiết kế để có thể monitor query performance
-- **Usage analytics**: Chuẩn bị metadata để phân tích usage pattern
-- **Error handling**: Thiết kế error states và logging
-- **Health checks**: Các query đơn giản để check database health
-
-#### 9. 🔧 Nguyên tắc phù hợp với ứng dụng
-- **Application-driven design**: Thiết kế theo nhu cầu thực tế của ứng dụng
-- **API-friendly**: Cấu trúc dữ liệu phù hợp với API endpoints
-- **Caching consideration**: Thiết kế tương thích với caching strategies
-- **Development workflow**: Phù hợp với quy trình phát triển của team
-
-#### 10. 🌍 Nguyên tắc đa môi trường
-- **Environment consistency**: Schema nhất quán giữa dev, staging, production
-- **Deployment strategy**: Chuẩn bị cho zero-downtime deployment
-- **Backup and recovery**: Thiết kế recovery-friendly
-- **Cross-region consideration**: Chuẩn bị cho distributed deployment
-
-### ⚖️ Thứ tự ưu tiên trong thiết kế
-
-```mermaid
-graph TD
-    A[Phân tích yêu cầu nghiệp vụ] --> B[Xác định entity và relationship]
-    B --> C[Thiết kế normalized schema]
-    C --> D[Đánh giá performance requirements]
-    D --> E{Performance đủ tốt?}
-    E -->|Không| F[Selective denormalization]
-    E -->|Có| G[Implement constraints & indexes]
-    F --> G
-    G --> H[Testing & optimization]
-    H --> I[Deploy và monitor]
-```
-
-### 🎯 Câu hỏi định hướng khi thiết kế
-
-Trước khi bắt tay vào thiết kế, hãy tự hỏi:
-
-1. **Query patterns**: 80% queries sẽ như thế nào?
-2. **Data volume**: Dự đoán lượng dữ liệu sau 1-2 năm?
-3. **Read/Write ratio**: Hệ thống read-heavy hay write-heavy?
-4. **Concurrency**: Bao nhiêu user đồng thời?
-5. **Consistency requirements**: Cần strong consistency hay eventual consistency?
-6. **Availability requirements**: Downtime tolerance là bao nhiêu?
-
----
-
-### 📚 Lý thuyết cốt lõi
-
-#### 1. Cấu trúc cơ sở dữ liệu quan hệ
-Cơ sở dữ liệu quan hệ tổ chức dữ liệu thành **bảng (table)**, mỗi bảng đại diện cho một **thực thể (entity)** như *Customer*, *Order*, *Product*. 
-
-**Khái niệm quan trọng:**
-- **Khóa chính (Primary Key)**: Định danh duy nhất cho mỗi bản ghi
-- **Khóa ngoại (Foreign Key)**: Tham chiếu đến khóa chính của bảng khác
-- **Toàn vẹn tham chiếu**: Đảm bảo dữ liệu không "mồ côi"
-
-#### 2. Nguyên tắc chuẩn hóa dữ liệu
-**Tại sao cần chuẩn hóa?**
-- Tránh trùng lặp dữ liệu
-- Đảm bảo tính nhất quán
-- Tiết kiệm dung lượng lưu trữ
-
-**Các chuẩn chính:**
-- **1NF (First Normal Form)**: Mỗi ô chỉ chứa một giá trị đơn lẻ
-- **2NF (Second Normal Form)**: Các cột phụ thuộc hoàn toàn vào khóa chính
-- **3NF (Third Normal Form)**: Không có phụ thuộc bắc cầu
-
-#### 3. Lựa chọn kiểu dữ liệu PostgreSQL
-| Mục đích | Kiểu dữ liệu | Ví dụ |
-|----------|--------------|-------|
-| ID tự tăng | `SERIAL`, `BIGSERIAL` | `id SERIAL PRIMARY KEY` |
-| Văn bản ngắn | `VARCHAR(n)` | `email VARCHAR(255)` |
-| Văn bản dài | `TEXT` | `description TEXT` |
-| Số thực | `NUMERIC`, `DECIMAL` | `price NUMERIC(10,2)` |  
-| Ngày tháng | `TIMESTAMP`, `DATE` | `created_at TIMESTAMP` |
-| JSON | `JSONB` | `metadata JSONB` |
-
-### 💡 Ví dụ minh họa
-**Thiết kế bảng Customer:**
-```sql
-CREATE TABLE customers (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    phone VARCHAR(20),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-**Thiết kế bảng Order với khóa ngoại:**
-```sql
-CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
-    customer_id INTEGER NOT NULL,
-    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    total_amount NUMERIC(10,2) NOT NULL,
-    status VARCHAR(20) DEFAULT 'pending',
-    FOREIGN KEY (customer_id) REFERENCES customers(id)
-);
-```
-
-### 🛠️ Thực hành
-
-#### Bài tập 1: Phân tích thiết kế hiện có
-Xem xét thiết kế bảng **Clients** và **Contacts** dưới đây:
-```sql
--- Bảng có vấn đề về chuẩn hóa
-CREATE TABLE bad_design (
-    id SERIAL PRIMARY KEY,
-    customer_name VARCHAR(100),
-    customer_email VARCHAR(255),
-    product_list TEXT, -- Vi phạm 1NF: chứa nhiều giá trị
-    order_total NUMERIC(10,2),
-    product_prices TEXT -- Dữ liệu trùng lặp
-);
-```
-
-**Nhiệm vụ:** Xác định các vấn đề và đề xuất cách chuẩn hóa.
-
-#### Bài tập 2: Thiết kế từ đầu
-Thiết kế schema cho **hệ thống quản lý thư viện** với các yêu cầu:
-- Quản lý sách (tên, tác giả, ISBN, thể loại)
-- Quản lý thành viên (tên, email, địa chỉ)
-- Theo dõi việc mượn sách (ngày mượn, ngày trả dự kiến)
-
-**Hướng dẫn:**
-1. Xác định các thực thể chính
-2. Liệt kê thuộc tính cho mỗi thực thể
-3. Xác định khóa chính cho mỗi bảng
-4. Thiết lập mối quan hệ bằng khóa ngoại
+### 🔑 Key Takeaways
+- **Performance-First Design:** Thiết kế cho usage patterns thực tế
+- **Strategic Normalization:** Chuẩn hóa đầu tiên, denormalize có mục đích  
+- **Future-Proof Mindset:** Chuẩn bị cho scale và evolution
+- **Quy trình 3 bước:** HIỂU → THIẾT KẾ → TỐI ƯU
 
 ---
 
@@ -596,8 +461,8 @@ model Product {
   @@map("products")
 }
 
-model Order {
-  id          Int      @id @default(autoincrement())
+   model Order {
+     id          Int      @id @default(autoincrement())
   customerId  Int      @map("customer_id")
   orderDate   DateTime @default(now()) @map("order_date")
   totalAmount Decimal  @db.Decimal(10, 2) @map("total_amount")
@@ -605,20 +470,20 @@ model Order {
   
   // Relationships
   customer    Customer    @relation(fields: [customerId], references: [id])
-  orderItems  OrderItem[]
+     orderItems  OrderItem[]
   
   @@map("orders")
 }
 
-model OrderItem {
+   model OrderItem {
   orderId   Int     @map("order_id")
   productId Int     @map("product_id")
   quantity  Int
   unitPrice Decimal @db.Decimal(10, 2) @map("unit_price")
   
   // Relationships
-  order     Order   @relation(fields: [orderId], references: [id])
-  product   Product @relation(fields: [productId], references: [id])
+     order     Order   @relation(fields: [orderId], references: [id])
+     product   Product @relation(fields: [productId], references: [id])
   
   @@id([orderId, productId])
   @@map("order_items")
