@@ -1,4 +1,4 @@
-# **Ethereum và Smart Contract** (1 giờ 10 phút)
+# **Ethereum và Smart Contract**
 
 ## Dẫn nhập (20 phút)
 

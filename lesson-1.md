@@ -1,4 +1,4 @@
-# Bitcoin và Lịch sử Hình thành – Đề cương Buổi Đào tạo (1 giờ 10 phút)
+# Bitcoin và Lịch sử Hình thành 
 
 **Đối tượng học viên:** Designer, Lập trình viên và QA engineer *chưa có nền tảng về Web3*.
 **Mục tiêu buổi học:** Giới thiệu khái niệm Bitcoin, bối cảnh lịch sử ra đời và nguyên lý hoạt động cơ bản. Học viên hiểu được Bitcoin là gì, tại sao ra đời, hoạt động ra sao, ứng dụng thế nào và tầm ảnh hưởng đến tài chính truyền thống cũng như Web3.

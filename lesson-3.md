@@ -1,83 +1,117 @@
+# Uniswap và các sàn phi tập trung (DEX) 
 
-## Buổi 3: Uniswap và các sàn phi tập trung (DEX)
+**Đối tượng học viên:** Designer, Lập trình viên và QA engineer *chưa có nền tảng về Web3*, đã học qua Bitcoin và Ethereum cơ bản.
 
-### Mục tiêu buổi học
-
-* Hiểu **DEX (Decentralized Exchange)** là gì và khác gì so với sàn giao dịch tập trung (CEX) truyền thống.
-* Nắm được **cách Uniswap hoạt động** ở mức cơ bản: khái niệm **AMM (Automated Market Maker)**, **liquidity pool** (bể thanh khoản), **liquidity provider** (người cung cấp thanh khoản), và cơ chế định giá tự động (công thức x\*y=k).
-* Biết được **lợi ích của DEX**: giao dịch không cần trung gian, ai cũng có thể niêm yết token (permissionless listing), người dùng giữ quyền kiểm soát tài sản trong suốt quá trình.
-* Thảo luận **tại sao DEX quan trọng trong Web3**: DEX hiện thực hóa tài chính phi tập trung (DeFi), giúp hoàn thiện hệ sinh thái không cần ngân hàng hay sàn tập trung, đồng thời tạo nền tảng cho nhiều ứng dụng tài chính sáng tạo (yield farming, lending, v.v.).
-
-### Nội dung chính
-
-* **Giới thiệu DEX và Uniswap:** Uniswap là **sàn giao dịch phi tập trung (DEX)** trên Ethereum, cho phép người dùng swap (hoán đổi) token ERC-20 **mà không cần qua bất kỳ trung gian nào**. Ra mắt năm 2018, Uniswap tiên phong cho cơ chế AMM, và nhanh chóng trở thành DEX hàng đầu với khối lượng giao dịch lớn, TVL cao. Hiện Uniswap vẫn nằm top các sàn phi tập trung với hàng tỷ USD thanh khoản khóa trong các pool.
-* **CEX vs DEX (so sánh ngắn):**
-
-  * *CEX (Centralized Exchange)*: ví dụ Binance, Coinbase. Người dùng phải tạo tài khoản, nạp tiền vào ví sàn (tài sản do sàn giữ hộ), giao dịch qua sổ lệnh (order book) khớp lệnh mua-bán. Ưu: tốc độ nhanh, giao diện thân thiện, có hỗ trợ. Nhược: tập trung nên có rủi ro (bị hack sàn, sàn phá sản như Mt.Gox, FTX), phải tin tưởng sàn, và thường chỉ niêm yết các coin/token đã qua kiểm duyệt.
-  * *DEX*: người dùng giao dịch trực tiếp từ ví cá nhân qua smart contract, **không cần tin cậy bên thứ ba**. Không cần đăng ký tài khoản hay KYC, chỉ cần kết nối ví (Metamask...). Mọi giao dịch được ghi on-chain, minh bạch. Bất cứ token nào tuân thủ chuẩn (ERC-20) đều có thể được giao dịch nếu có thanh khoản – **permissionless listing**. Rủi ro: người dùng tự quản lý tài sản (nếu thao tác sai có thể mất tiền, không ai hỗ trợ khôi phục), giao dịch on-chain có thể chậm và phí cao khi mạng tắc.
-* **Nguyên lý AMM của Uniswap:**
-
-  * Thay vì sổ lệnh, Uniswap dùng **Automated Market Maker**: mỗi cặp token có một **pool thanh khoản** do người dùng (LPs) gửi vào. Ví dụ cặp ETH/USDT có pool chứa X ETH và Y USDT. Bất kỳ ai muốn trade chỉ cần tương tác với pool: *mua ETH* tức là nạp USDT vào pool và rút bớt ETH ra, *bán ETH* thì ngược lại.
-  * **Công thức x\*y=k:** Uniswap V2 dùng công thức này để đảm bảo **sản phẩm không đổi**. Nếu pool ban đầu có X \* Y = k, khi người mua rút bớt ETH (giảm X) và nạp USDT (tăng Y), tích X\*Y phải bằng k ⇒ giá ETH tăng. Ngược lại khi bán ETH vào pool, X tăng, Y giảm, giá ETH giảm. Công thức này tự động điều chỉnh giá dựa trên cung-cầu.
-  * **Ví dụ số đơn giản:** Giả sử pool ban đầu có 100 ETH và 200,000 USDT (tỷ giá 1 ETH = 2000 USDT). Nếu một người mua 1 ETH từ pool, họ phải nạp \~2000 USDT, sau giao dịch pool có \~99 ETH và 202,000 USDT. Giá mới = 202000/99 ≈ 2040 USDT/ETH (tăng chút). Nếu mua nhiều ETH liên tục, giá trượt tăng dần – gọi là **slippage**.
-  * **Liquidity Provider (LP):** Ai cũng có thể trở thành LP bằng cách gửi **cả hai token** vào pool theo tỷ lệ hiện tại. LP nhận về **LP token** đại diện phần đóng góp. LP được hưởng **phí giao dịch**: ví dụ Uniswap v2 thu 0.3% mỗi giao dịch, tự động chia cho LP theo tỷ lệ đóng góp. Đây là động lực kiếm lời cho người cung cấp thanh khoản. Tuy nhiên LP chịu rủi ro **tổn thất tạm thời (impermanent loss)** khi giá token biến động lệch nhiều – không đi quá sâu, chỉ cần lưu ý khái niệm.
-* **Trải nghiệm người dùng trên Uniswap:**
-
-  * Kết nối ví (VD: Metamask), chọn cặp token, nhập số lượng => smart contract sẽ tính toán và thực hiện hoán đổi. Người dùng trả một **phí gas** cho mạng Ethereum và một phần nhỏ phí giao dịch cho LP.
-  * Không cần tạo tài khoản, không ai có thể ngăn giao dịch của bạn (trừ khi token đó không có pool thanh khoản).
-  * Giao dịch xong, token mới vào ví của người dùng, không phải rút ra từ sàn như CEX.
-* **Sự phát triển của DEX:**
-
-  * Uniswap mở đầu, sau đó nhiều DEX khác ra đời: SushiSwap (fork từ Uni nhưng có token quản trị), PancakeSwap (trên BSC), Trader Joe (Avalanche), v.v. Mô hình AMM được cải tiến (Uniswap v3 với *concentrated liquidity* cho phép LP chọn dải giá).
-  * Khái niệm **yield farming**: 2020 t.g gọi là “Mùa hè DeFi”, các dự án khuyến khích cung cấp thanh khoản bằng cách thưởng token, dẫn tới bùng nổ người dùng DEX.
-  * **Khối lượng giao dịch DEX** tăng mạnh; có thời điểm (2021) volume Uniswap còn vượt cả Coinbase – chứng minh sức mạnh của mô hình phi tập trung.
-* **Tại sao DEX quan trọng trong Web3:**
-
-  * **Tự chủ tài sản:** Triết lý “not your keys, not your coins” – dùng DEX, người dùng luôn giữ private key, giảm rủi ro mất tiền do sàn sập/hack.
-  * **Permissionless innovation:** Bất cứ token mới nào (startup Web3) đều có thể tạo thị trường thanh khoản mà không cần thuyết phục sàn lớn niêm yết. Điều này thúc đẩy **hệ sinh thái DeFi** phong phú.
-  * **Censorship resistance:** DEX khó bị đóng cửa hơn CEX (vì là smart contract chạy phân tán). Ngay cả khi website bị chặn, người dùng vẫn có thể tương tác trực tiếp với hợp đồng nếu rành kỹ thuật, hoặc thông qua các giao diện khác (do mã nguồn mở nên nhiều giao diện có thể kết nối).
-  * **Tài chính mở 24/7 toàn cầu:** Bất kỳ ai trên thế giới, bất kỳ lúc nào, đều có thể giao dịch nếu có internet + ví, không phụ thuộc múi giờ thị trường, không cần đăng ký.
-  * **Nền tảng cho DeFi phức tạp:** DEX là mảnh ghép cơ bản, trên đó mới xây dựng được các thứ như aggregator (gộp nhiều DEX tìm giá tốt nhất), lending (vay thế chấp token), stablecoin (swap stable), phái sinh phi tập trung, v.v. Nếu thiếu DEX, Web3 tài chính sẽ kém hoàn thiện.
-
-### Cấu trúc buổi học
-
-1. **Khởi động (5 phút):** Hỏi: *“Ai ở đây từng mua Bitcoin/ETH trên sàn như Binance chưa? Trải nghiệm thế nào?”*. Để vài người chia sẻ (đăng ký, chờ KYC, nộp tiền...). Sau đó hỏi: *“Có cách nào trade crypto **không cần sàn** không?”*. Giới thiệu: *“Đó chính là DEX – và Uniswap là ví dụ tiêu biểu.”*
-2. **Trình bày khái niệm DEX (5 phút):** Định nghĩa DEX, so sánh nhanh với CEX. Nhấn mạnh từ khóa **“không cần trung gian, giao dịch thẳng từ ví”**. Có thể chiếu một bảng so sánh CEX vs DEX (sử dụng các ý đã liệt kê ở trên) để trực quan.
-3. **Giải thích cơ chế Uniswap (15 phút):** Dùng bảng hoặc slide minh họa **pool**. Vẽ hai thùng nước (hoặc hai cột tài sản) tượng trưng cho pool token A và B. Minh họa người trade bằng cách lấy từ thùng này đổ sang thùng kia. Trình bày công thức x\*y=k một cách đơn giản, tránh công thức phức tạp: chỉ cần nói “mỗi lần giao dịch, tỷ lệ token trong pool thay đổi -> giá thay đổi tương ứng để giữ tổng giá trị cân bằng”. Có thể đưa một ví dụ số nhỏ (như trên).
-
-   * Nhớ giải thích vai trò **người cung cấp thanh khoản**: dùng ẩn dụ *“họ như người đổ nước vào thùng để tạo hồ bơi; và được thưởng phí như tiền vé của người bơi”*.
-   * Cho xem giao diện Uniswap (nếu mạng cho phép): mở app.uniswap.org, nhập một cặp token (ví dụ ETH-USDT) để thấy tỷ giá, trường nhập số lượng, phần hiển thị dự tính trượt giá, phí. (Không cần thực hiện swap thật nếu ko có ví, chỉ minh họa UI).
-   * Giải thích khái niệm **slippage** (trượt giá) khi giao dịch khối lượng lớn so với pool – có thể ví: *“bạn múc nhiều nước từ bể, mực nước giảm đáng kể nên nồng độ thay đổi nhiều”*.
-4. **Ví dụ thực tế (5 phút):** Nếu có sẵn ví (testnet hoặc chứa ít token trên mainnet), có thể làm thử một giao dịch nhỏ trên Uniswap trước lớp và chiếu transaction đó (hoặc trình bày bước thực hiện). Nếu không, cho xem một **tx hash trên Etherscan** của giao dịch swap, highlight các thông tin: số lượng in/out, phí gas, v.v. Điều này giúp học viên thấy DEX giao dịch thực sự diễn ra on-chain chứ không phải trong sổ cái riêng của sàn.
-5. **Thảo luận ưu/nhược (10 phút):** Hỏi lớp:
-
-   * *“Ưu điểm của DEX là gì?”* – Mong đợi: an toàn (ko sợ sàn sập), tự do (nhiều token), ẩn danh (ko KYC).
-   * *“Nhược điểm thì sao?”* – Mong đợi: chậm hơn (phải chờ block), phí cao (lúc tắc network), giao diện phức tạp hơn, không có ai hỗ trợ nếu sai, có thể gặp **scam token** (token giả mạo giống tên, người dùng trade nhầm).
-   * Nhân đây, giảng viên giải thích chiêu **scam token**: vì DEX ai cũng list token được, nên xuất hiện token nhái (ví dụ “UNI” giả) – người dùng phải kiểm tra contract address cẩn thận khi giao dịch.
-6. **Tổng kết vai trò (5 phút):** Nhấn mạnh: Uniswap và DEX nói chung là trụ cột của DeFi – tạo nên một **thị trường mở** 24/7 cho tài sản crypto. Liên hệ bức tranh lớn: *“Trước đây ta có tiền (Bitcoin), có máy tính (Ethereum), giờ có chợ (Uniswap). Dần dần, hệ sinh thái tài chính phi tập trung hoàn chỉnh hình thành.”* Bật mí nội dung buổi cuối: *“Chúng ta đã có nhiều blockchain khác nhau, vậy làm sao kết nối chúng? Buổi sau sẽ về Bridge & LayerZero.”*
-
-### Tài nguyên giảng dạy
-
-* **Bài viết giới thiệu:** *“Uniswap (UNI) là gì? Tìm hiểu về sàn DEX hàng đầu…”* (Coin68, 2023) – mô tả dễ hiểu Uniswap, cơ chế AMM, sự phát triển, có thống kê TVL, khối lượng.
-* **Bài viết học thuật hơn:** *“Mô hình hoạt động Uniswap V2 – Nền tảng của các AMM”* (Coin98 Insights) – giải thích chi tiết công thức x\*y=k, ví dụ số và cả mã nguồn pseudo. Thích hợp cho giảng viên nghiên cứu trước để tự tin giải thích.
-* **Video hướng dẫn:** *“Cách sử dụng Uniswap cho người mới”* (YouTube, tiếng Việt) – quay màn hình thao tác swap trên Uniswap và giải thích các bước. Giảng viên có thể trích một đoạn để chiếu (ví dụ đoạn nói về kết nối ví và chọn token).
-* **Dữ liệu thực:** Trang **DefiLlama** – thống kê khối lượng giao dịch DEX, thị phần Uniswap. Có thể lấy một con số nhỏ cho vui (ví dụ: “24h qua Uniswap giao dịch X tỷ USD, trong khi sàn X giao dịch Y tỷ”).
-* **Bài học kinh nghiệm:** Case study ngắn về sự kiện *“FTX sập 2022”* – nhiều người mất tiền vì sàn tập trung. Nêu sự kiện này để nhấn mạnh lại giá trị phi tập trung: nếu ai cũng tự giữ coin và dùng DEX, sẽ không có chuyện sập sàn mất tiền. (Nguồn: các báo crypto cuối 2022).
-
-### Hướng dẫn giảng dạy
-
-* **Diễn giải bằng câu chuyện:** Có thể kể câu chuyện của **Hayden Adams** – người sáng lập Uniswap: anh ấy thất nghiệp, học lập trình Solidity theo bài blog của Vitalik, rồi xây Uniswap chỉ với một ý tưởng đơn giản. Cộng đồng dùng ngày càng đông, Uniswap thành công. Câu chuyện này truyền cảm hứng: *“Một cá nhân với ý tưởng hay + môi trường mở Ethereum = tạo ra sản phẩm tỉ đô trong DeFi.”* (Khích lệ tinh thần startup Web3).
-* **Trò chơi nhỏ minh họa AMM:** Nếu lớp không quá đông, có thể làm trò chơi: chọn 2 học viên đại diện cho pool (một bạn cầm 10 kẹo, một bạn cầm 10 bút giả làm 2 token). Mời một “trader” đưa 2 kẹo để đổi lấy một số bút theo tỷ lệ hiện tại (ban đầu 1 kẹo = 1 bút). Khi bút giảm, giá kẹo tăng... Làm vài lượt để cả lớp thấy “giá” thay đổi thế nào. Hoạt động vui giúp ghi nhớ.
-* **Nhấn mạnh thực hành an toàn:** Hướng dẫn học viên (nếu họ tự dùng sau này) lưu ý: kiểm tra kỹ địa chỉ token trước khi swap (tránh token giả), chú ý thiết lập slippage tolerance, và cẩn thận với phê duyệt (approve) token vô hạn (có thể bị hack nếu contract xấu). Đây là kiến thức nâng cao hơn, nhưng ít nhất đề cập để họ biết DEX cũng cần kỹ năng sử dụng an toàn.
-* **Liên hệ kiến thức cũ:** Permissionless – nhắc lại: Uniswap listing permissionless, bất kỳ token ERC-20 đều giao dịch được. Smart contract – đây chính là ứng dụng cụ thể: code Uniswap tự động làm vai trò market maker. Web3 vision – DEX là “ngân hàng/trung tâm tài chính phi tập trung”.
-* **Khuyến khích dùng thử (cẩn thận):** Nếu công ty cho phép, có thể khuyến khích học viên thử tạo ví và dùng Uniswap với số tiền nhỏ (trên testnet càng tốt) để tự trải nghiệm. Trải nghiệm thực tế sẽ giúp họ hiểu sâu sắc cách DEX hoạt động, nhưng phải dặn dò an toàn (như không dùng ví cá nhân chứa nhiều tiền, đề phòng phishing).
-
-### Câu hỏi thảo luận gợi ý
-
-* **So với giao dịch trên sàn Binance, giao dịch trên Uniswap khác những gì?** – Học viên liệt kê: không cần nạp tiền vào sàn, dùng ví cá nhân; không có lệnh mua/bán mà swap ngay; phải trả phí gas; chọn token tùy ý (nhiều lựa chọn hơn)… Câu này kiểm tra hiểu biết vừa học.
-* **Điều gì đảm bảo người dùng A có thể mua token từ người dùng B trên DEX mà không cần họ gặp nhau?** – Gợi họ giải thích vai trò **pool thanh khoản**. Đáp: vì đã có pool, người mua bán chỉ tương tác với pool chứ không cần khớp trực tiếp với nhau như sàn order book.
-* **Ai là người định giá token trên Uniswap?** – Học viên có thể lúng túng, giảng viên hướng: *“Có phải một tổ chức hay thuật toán AI định giá không?”* – Để dẫn đến câu trả lời: **công thức AMM** định giá dựa trên số lượng trong pool, tức là *chính người giao dịch gián tiếp quyết định giá* (mua nhiều thì giá tăng, bán nhiều giá giảm).
-* **Những rủi ro nào khi cung cấp thanh khoản kiếm phí trên Uniswap?** – Câu này nâng cao hơn, nhưng khuyến khích tư duy: học viên có thể nói về impermanent loss nếu biết (nếu không, giảng viên giải thích sơ: khi tỷ giá 2 token biến động, LP có thể lỗ so với chỉ giữ token). Cũng có thể nói đến rủi ro smart contract (dù Uniswap đã kiểm định, nhưng nguyên tắc DeFi: hợp đồng lỗi có thể mất tiền). Ý thức được rủi ro giúp họ không lầm tưởng “DeFi = lợi nhuận vô rủi ro”.
-* **Bạn có nghĩ DEX sẽ thay thế hoàn toàn sàn tập trung không? Tại sao?** – Một câu mở. Có người sẽ nói có (vì triết lý phi tập trung), có người nói không (vì người mới vẫn cần giao diện thân thiện, CEX cung cấp fiat onramp...). Hãy để họ tranh luận. Giảng viên kết luận: có lẽ cả hai sẽ cùng tồn tại, nhưng DEX chắc chắn sẽ ngày càng quan trọng, đặc biệt đối với cộng đồng thuần crypto.
+**Mục tiêu buổi học:** Hiểu **DEX (Decentralized Exchange)** là gì và khác gì so với sàn giao dịch tập trung (CEX) truyền thống. Nắm được **cách Uniswap hoạt động** ở mức cơ bản: khái niệm **AMM (Automated Market Maker)**, **liquidity pool** (bể thanh khoản), **liquidity provider** (người cung cấp thanh khoản), và cơ chế định giá tự động (công thức x*y=k). Biết được **lợi ích của DEX**: giao dịch không cần trung gian, ai cũng có thể niêm yết token (permissionless listing), người dùng giữ quyền kiểm soát tài sản trong suốt quá trình. Thảo luận **tại sao DEX quan trọng trong Web3**: DEX hiện thực hóa tài chính phi tập trung (DeFi), giúp hoàn thiện hệ sinh thái không cần ngân hàng hay sàn tập trung, đồng thời tạo nền tảng cho nhiều ứng dụng tài chính sáng tạo (yield farming, lending, v.v.).
 
 ---
+
+## 1. Dẫn nhập (20 phút)
+
+### 1.1. Khởi động & Câu hỏi mở
+Giảng viên mở đầu bằng câu hỏi gợi mở: *"Ai ở đây từng mua Bitcoin/ETH trên sàn như Binance chưa? Trải nghiệm thế nào?"*. Để vài người chia sẻ (đăng ký, chờ KYC, nộp tiền...). Sau đó hỏi: *"Có cách nào trade crypto **không cần sàn** không?"*. 
+
+**Liên hệ thực tế:** Hỏi tiếp về những bất tiện khi sử dụng sàn tập trung: phải tin tưởng sàn giữ tiền, lo sợ sàn bị hack hay phá sản, chờ đợi KYC phức tạp, chỉ trade được những coin sàn cho phép. Từ đó, giảng viên dẫn dắt: *"Sẽ thế nào nếu chúng ta có thể giao dịch crypto trực tiếp từ ví của mình, không cần gửi tiền cho ai?"* – giới thiệu ý tưởng về sàn giao dịch phi tập trung.
+
+### 1.2. Câu chuyện dẫn dắt
+Giảng viên kể câu chuyện về **Hayden Adams** – người sáng lập Uniswap: *"Năm 2017, một chàng trai trẻ tên Hayden Adams vừa bị sa thải khỏi công việc kỹ sư cơ khí. Thất nghiệp và không biết làm gì, anh bắt đầu học lập trình Solidity theo một bài blog của Vitalik Buterin về 'Automated Market Makers'. Từ một ý tưởng đơn giản - tạo ra một cách để mọi người có thể trao đổi token mà không cần sàn giao dịch truyền thống - Hayden đã xây dựng nên Uniswap."*
+
+**Nhấn mạnh:** *"Điều đặc biệt là Hayden không phải chuyên gia tài chính hay có background về trading. Anh chỉ là một người bình thường với một ý tưởng: tại sao chúng ta lại phải tin tưởng và phụ thuộc vào các sàn giao dịch tập trung? Từ ý tưởng đó, Uniswap đã ra đời và thay đổi cách chúng ta nghĩ về giao dịch trong thế giới crypto."*
+
+### 1.3. Ví dụ hấp dẫn
+Giảng viên chia sẻ một con số gây ấn tượng: *"Các bạn có đoán được khối lượng giao dịch hàng ngày của Uniswap là bao nhiêu không?"* (Cho học viên vài giây suy nghĩ). *"Có thời điểm năm 2021, khối lượng giao dịch 24h của Uniswap còn **vượt cả Coinbase** - một trong những sàn crypto lớn nhất thế giới! Từ một dự án của một cá nhân thất nghiệp, Uniswap đã trở thành một trong những nền tảng giao dịch quan trọng nhất trong DeFi."*
+
+**Câu hỏi kích thích:** *"Điều gì khiến một sàn 'không có chủ' lại có thể cạnh tranh và thậm chí vượt qua các sàn truyền thống được quản lý bởi các công ty lớn?"*
+
+### 1.4. Giới thiệu chủ đề
+Từ những dẫn dắt trên, giảng viên chính thức giới thiệu chủ đề buổi học: *"Hôm nay chúng ta sẽ cùng tìm hiểu về Uniswap và thế giới của các sàn giao dịch phi tập trung (DEX). Chúng ta sẽ khám phá cách chúng hoạt động, tại sao chúng lại quan trọng, và làm thế nào chúng đang định hình lại tương lai của tài chính. Tất cả sẽ được giải thích một cách đơn giản nhất, không đòi hỏi các bạn có kiến thức chuyên sâu về tài chính hay lập trình."*
+
+---
+
+## 2. Định nghĩa & Giải thích (20 phút)
+
+Giảng viên trình bày các khái niệm chính một cách dễ hiểu, kèm ví dụ/so sánh trực quan:
+
+**DEX (Decentralized Exchange - Sàn giao dịch phi tập trung):** DEX là nền tảng cho phép người dùng giao dịch tiền mã hóa trực tiếp với nhau **mà không cần trung gian**. Khác với sàn tập trung (CEX), người dùng không cần tạo tài khoản hay gửi tiền vào sàn - họ giao dịch trực tiếp từ ví cá nhân thông qua smart contract. Uniswap là DEX hàng đầu trên Ethereum, cho phép hoán đổi các token ERC-20 một cách tự động và không cần cấp phép.
+
+**CEX vs DEX (So sánh):** *CEX (Centralized Exchange)* như Binance, Coinbase yêu cầu người dùng tạo tài khoản, nạp tiền vào ví sàn (tài sản do sàn giữ hộ), giao dịch qua sổ lệnh khớp lệnh mua-bán. Ưu điểm: tốc độ nhanh, giao diện thân thiện, có hỗ trợ khách hàng. Nhược điểm: tập trung nên có rủi ro bị hack, sàn phá sản, phải tin tưởng sàn, chỉ niêm yết các coin đã qua kiểm duyệt. *DEX* ngược lại: người dùng giao dịch từ ví cá nhân qua smart contract, không cần tin cậy bên thứ ba, không cần KYC, mọi token tuân thủ chuẩn đều có thể giao dịch (permissionless listing). Rủi ro: người dùng tự quản lý tài sản, giao dịch có thể chậm và phí cao khi mạng tắc.
+
+**AMM (Automated Market Maker - Tạo lập thị trường tự động):** Thay vì sử dụng sổ lệnh truyền thống, Uniswap dùng AMM - một cơ chế tự động tạo ra giá và thanh khoản. Hệ thống này hoạt động thông qua các **bể thanh khoản (liquidity pools)** chứa cặp token. Ví dụ: pool ETH/USDT chứa một lượng ETH và USDT. Khi ai đó muốn mua ETH, họ nạp USDT vào pool và rút ETH ra, giá ETH sẽ tự động tăng theo thuật toán.
+
+**Liquidity Pool (Bể thanh khoản):** Đây là "kho chứa" các cặp token được người dùng gửi vào để tạo thanh khoản cho việc giao dịch. Ví dụ pool ETH/USDT có thể chứa 100 ETH và 200,000 USDT. Mọi giao dịch hoán đổi đều diễn ra thông qua pool này - người mua ETH sẽ nạp USDT vào và rút ETH ra, làm thay đổi tỷ lệ trong pool và do đó thay đổi giá.
+
+**Công thức x*y=k:** Uniswap V2 sử dụng công thức này để đảm bảo **sản phẩm không đổi**. Nếu pool có X token A và Y token B, thì X * Y phải luôn bằng hằng số k. Khi có giao dịch làm thay đổi X hoặc Y, giá sẽ tự động điều chỉnh để duy trì công thức này. *Ví dụ đơn giản:* Pool có 100 ETH và 200,000 USDT (k = 20,000,000). Khi ai đó mua 1 ETH, pool còn 99 ETH, để giữ k không đổi, pool phải có ~202,020 USDT - nghĩa là người mua phải trả ~2,020 USDT cho 1 ETH.
+
+**Liquidity Provider (LP - Người cung cấp thanh khoản):** Đây là những người gửi tài sản vào các pool để tạo thanh khoản. LP phải gửi **cả hai token** theo tỷ lệ hiện tại của pool và nhận về **LP token** đại diện cho phần đóng góp của họ. Đổi lại, LP được hưởng **phí giao dịch** (Uniswap V2 thu 0.3% mỗi giao dịch) chia theo tỷ lệ đóng góp. Tuy nhiên, LP cũng chịu rủi ro **impermanent loss** khi giá token biến động mạnh.
+
+**Slippage (Trượt giá):** Khi giao dịch khối lượng lớn so với kích thước pool, giá sẽ thay đổi đáng kể giữa lúc đặt lệnh và lúc thực hiện. Ví dụ: muốn mua 10 ETH từ pool nhỏ có thể khiến giá ETH tăng từ 2000 USDT lên 2100 USDT trong cùng giao dịch đó.
+
+---
+
+## 3. Ứng dụng & Mở rộng (15 phút)
+
+### 3.1. Vai trò & Trường hợp sử dụng thực tế
+**Vai trò hiện tại của DEX:** DEX đã trở thành xương sống của hệ sinh thái DeFi, tạo ra một **thị trường tài chính mở 24/7** không biên giới. Uniswap và các DEX khác cho phép giao dịch hàng nghìn token mà các sàn tập trung không niêm yết, đặc biệt là các token mới hoặc của các dự án nhỏ. 
+
+**Trường hợp sử dụng cụ thể:** Nhà đầu tư có thể swap token ngay lập tức mà không cần chờ KYC; các dự án startup có thể tạo thanh khoản cho token của mình mà không cần xin sàn lớn niêm yết; người dùng có thể trở thành LP để kiếm phí từ việc cung cấp thanh khoản. DEX cũng là nền tảng cho các chiến lược DeFi phức tạp như yield farming, arbitrage, và flash loans.
+
+### 3.2. Ảnh hưởng đến các lĩnh vực liên quan
+**Tác động đến tài chính truyền thống:** DEX thách thức mô hình trung gian truyền thống bằng cách chứng minh rằng thị trường có thể tự vận hành hiệu quả mà không cần market maker tập trung. Điều này buộc các sàn CEX phải cải thiện dịch vụ và giảm phí để cạnh tranh.
+
+**Ảnh hưởng đến công việc học viên:** Đối với **developer**, hiểu DEX mở ra cơ hội phát triển các ứng dụng tài chính phi tập trung hoặc tích hợp chức năng swap vào dApp. **Designer** cần thiết kế UX cho các giao dịch phức tạp hơn (slippage, gas fee, LP) một cách thân thiện. **QA** cần hiểu các edge case đặc thù của DEX như front-running, MEV, impermanent loss để thiết kế test case phù hợp.
+
+### 3.3. Ảnh hưởng đến tương lai (Web3)
+**Nền tảng cho DeFi:** DEX là viên gạch đầu tiên của hệ sinh thái DeFi. Không có DEX, sẽ không có lending protocols (vì cần swap collateral), yield farming (cần swap rewards), hay stablecoin (cần arbitrage để duy trì peg). DEX tạo ra tính **composability** - khả năng các protocol khác xây dựng lên trên và tương tác với nhau.
+
+**Tầm nhìn omnichain:** Tương lai, DEX sẽ phát triển thành các nền tảng giao dịch đa chuỗi, cho phép swap token giữa các blockchain khác nhau một cách liền mạch. Điều này sẽ tạo ra một thị trường tài chính toàn cầu thực sự, nơi mọi tài sản số đều có thể được giao dịch tự do.
+
+**Dân chủ hóa tài chính:** DEX hiện thực hóa tầm nhìn về một hệ thống tài chính **permissionless** - nơi bất kỳ ai cũng có thể tham gia, tạo thị trường, và cung cấp dịch vụ tài chính mà không cần xin phép cơ quan quản lý hay tổ chức trung gian.
+
+---
+
+## 4. Thảo luận mở (10 phút)
+
+Giảng viên đưa ra các câu hỏi để cả lớp cùng thảo luận, khuyến khích học viên chia sẻ suy nghĩ:
+
+**1. So với giao dịch trên sàn Binance, giao dịch trên Uniswap khác những gì?**
+*Gợi ý trả lời:* Học viên có thể liệt kê: không cần nạp tiền vào sàn, dùng ví cá nhân; không có lệnh mua/bán mà swap ngay; phải trả phí gas; chọn token tùy ý (nhiều lựa chọn hơn); không có customer support nếu có vấn đề. Câu này kiểm tra hiểu biết vừa học và giúp so sánh trực quan.
+
+**2. Điều gì đảm bảo người dùng A có thể mua token từ người dùng B trên DEX mà không cần họ gặp nhau?**
+*Gợi ý trả lời:* Gợi họ giải thích vai trò **pool thanh khoản**. Đáp án: vì đã có pool, người mua bán chỉ tương tác với pool chứ không cần khớp trực tiếp với nhau như sàn order book. Pool đóng vai trò như một "ngân hàng tự động" luôn sẵn sàng mua/bán.
+
+**3. Ai là người định giá token trên Uniswap?**
+*Gợi ý trả lời:* Học viên có thể lúng túng, giảng viên hướng: *"Có phải một tổ chức hay thuật toán AI định giá không?"* Đáp án: **công thức AMM** định giá dựa trên số lượng trong pool, tức là *chính người giao dịch gián tiếp quyết định giá* (mua nhiều thì giá tăng, bán nhiều giá giảm). Thị trường tự điều tiết.
+
+**4. Bạn có nghĩ DEX sẽ thay thế hoàn toàn sàn tập trung không? Tại sao?**
+*Gợi ý trả lời:* Câu hỏi mở để tranh luận. Có người sẽ nói có (vì triết lý phi tập trung), có người nói không (vì người mới vẫn cần giao diện thân thiện, CEX cung cấp fiat onramp). Giảng viên kết luận: có lẽ cả hai sẽ cùng tồn tại, phục vụ các nhu cầu khác nhau, nhưng DEX chắc chắn sẽ ngày càng quan trọng.
+
+---
+
+## 5. Tóm tắt (5 phút)
+
+### 5.1. Tổng kết các ý chính
+* **DEX vs CEX:** Sàn phi tập trung cho phép giao dịch trực tiếp từ ví cá nhân thông qua smart contract, không cần tin tưởng bên trung gian, nhưng đòi hỏi người dùng tự chịu trách nhiệm cao hơn.
+* **Cơ chế AMM:** Uniswap sử dụng bể thanh khoản và công thức x*y=k để tự động tạo giá và thanh khoản, thay thế mô hình sổ lệnh truyền thống.
+* **Vai trò của LP:** Người cung cấp thanh khoản kiếm phí từ giao dịch nhưng chịu rủi ro impermanent loss, tạo nên động lực kinh tế để duy trì hoạt động của DEX.
+* **Tính permissionless:** Bất kỳ ai cũng có thể tạo pool, list token, hoặc tham gia giao dịch mà không cần xin phép, thể hiện tinh thần mở của Web3.
+
+### 5.2. Nhấn mạnh thông điệp cốt lõi
+**"DEX chứng minh rằng thị trường tài chính có thể tự vận hành hiệu quả mà không cần trung gian, mở ra một tương lai nơi mọi người đều có quyền bình đẳng tiếp cận và tham gia vào hệ thống tài chính toàn cầu."**
+
+### 5.3. Cầu nối đến bài học tiếp theo
+*"Chúng ta đã thấy cách DEX cho phép giao dịch các token có thể thay thế (fungible) như ETH, USDT một cách tự do. Nhưng Web3 còn mở ra khả năng sở hữu và giao dịch những tài sản số **độc nhất** - không thể thay thế. Buổi tới, chúng ta sẽ khám phá thế giới của NFT (Non-Fungible Token) và cách chúng đang tạo ra một nền kinh tế mới cho người sáng tạo."*
+
+---
+
+## 6. Tài liệu tham khảo thêm
+
+**Video YouTube tham khảo:**
+* **"Uniswap (UNI) là gì? Tìm hiểu về sàn DEX hàng đầu"** (Coin68) – Giải thích dễ hiểu về Uniswap và cơ chế AMM bằng tiếng Việt (~15 phút)
+* **"Cách sử dụng Uniswap cho người mới"** – Video hướng dẫn thực hành swap token trên Uniswap (~10 phút)
+
+**Bài viết tham khảo:**
+* **"Mô hình hoạt động Uniswap V2 – Nền tảng của các AMM"** (Coin98 Insights) – Phân tích chi tiết công thức x*y=k và ví dụ số cụ thể
+* **DefiLlama** – Trang web thống kê khối lượng giao dịch DEX và thị phần Uniswap realtime
+
+**Case study:**
+* **"Bài học từ sự kiện FTX sập năm 2022"** – Nghiên cứu về tầm quan trọng của việc tự giữ tài sản và sử dụng DEX thay vì tin tưởng sàn tập trung
