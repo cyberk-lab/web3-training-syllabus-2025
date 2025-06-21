@@ -1,0 +1,69 @@
+
+## Buổi 3: NFT và OpenSea
+
+### Mục tiêu buổi học
+
+* Hiểu **NFT là gì** (Non-Fungible Token – token không thể thay thế): phân biệt được tài sản thay thế được (fungible) và không thay thế được (non-fungible) trong thế giới số.
+* Nắm được **các ứng dụng của NFT**: từ nghệ thuật số, sưu tầm, vật phẩm game đến các tài sản khác, và vì sao NFT mang lại giá trị (tính độc nhất, quyền sở hữu xác thực trên blockchain).
+* Biết **OpenSea** là gì và vai trò của nó: một chợ trực tuyến phi tập trung lớn nhất để mua bán, đấu giá NFT.
+* Hiểu **tại sao NFT quan trọng trong Web3**: mở ra khả năng **sở hữu tài sản số** thực sự, trao quyền cho người sáng tạo, và hình dung một tương lai metaverse nơi mọi vật phẩm số đều có thể là NFT thuộc về người dùng.
+
+### Nội dung chính
+
+* **Giải thích NFT (Non-Fungible Token):** NFT là **token mã hóa trên blockchain đại diện cho một tài sản duy nhất**. “Không thể thay thế” nghĩa là mỗi NFT độc nhất, khác với token thường (ví dụ 1 ETH nào cũng như 1 ETH khác – thay thế được). NFT lưu trữ thông tin (metadata) có thể gắn với hình ảnh, video, âm nhạc hoặc bất kỳ nội dung số nào, thậm chí tài sản vật lý (bằng chứng sở hữu dưới dạng số).
+* **Ví dụ dễ hiểu về tính không thay thế:** So sánh: tờ tiền 100k này và tờ 100k khác về cơ bản giống nhau (fungible), nhưng bức tranh Mona Lisa gốc và bản sao poster thì không thể hoán đổi – bức gốc có tính duy nhất (non-fungible). NFT giống như **chứng chỉ xác thực** cho bản “gốc số” của một tài sản (dù nội dung có thể sao chép, nhưng NFT chứng minh *ai là chủ sở hữu thật* của bản gốc trên blockchain).
+* **Lịch sử & cơn sốt NFT:** NFT xuất hiện đầu tiên khoảng 2017 với CryptoPunks, CryptoKitties,... nhưng bùng nổ năm 2020-2021. Câu chuyện nổi bật: Tác phẩm nghệ thuật số “Everydays: The First 5000 Days” của Beeple bán với giá **69 triệu USD** vào 2021 thông qua NFT – gây chấn động giới nghệ thuật. Nhiều người nổi tiếng, thương hiệu tham gia NFT (ví dụ: NBA Top Shot bán khoảnh khắc bóng rổ, ca sĩ Kings of Leon phát hành album dưới dạng NFT...). Tuy nhiên, cũng xuất hiện bong bóng: giá nhiều NFT bị đẩy lên rất cao do đầu cơ.
+* **Ứng dụng phổ biến của NFT:**
+
+  * **Nghệ thuật số:** Họa sĩ số có thể bán tác phẩm của mình trực tiếp cho người mua trên blockchain, không qua gallery/trung gian, và có thể lập trình để nhận **royalty** (tiền bản quyền mỗi lần tác phẩm được bán lại). NFT đảm bảo tính độc quyền (mỗi tác phẩm có một mã token duy nhất chứng nhận).
+  * **Sưu tầm (Collectibles):** Các bộ sưu tập NFT như **CryptoPunks**, **Bored Ape Yacht Club** – mỗi NFT là một hình ảnh avatar độc đáo, có cộng đồng và tiện ích đi kèm (ví dụ: sở hữu BAYC được vào câu lạc bộ VIP của dự án). Giá trị đến từ độ hiếm và nhu cầu cộng đồng.
+  * **Gaming:** Vật phẩm game (vũ khí, trang phục, nhân vật) dưới dạng NFT cho phép người chơi **thực sự sở hữu** và trao đổi ngoài game. Ví dụ: game Axie Infinity, Decentraland bán đất ảo dưới dạng NFT. NFT giúp kinh tế trong game minh bạch và người chơi kiếm tiền (play-to-earn).
+  * **Tài sản khác:** NFT có thể đại diện cho vé sự kiện, tên miền phi tập trung (vd: **.eth name**), thậm chí **bằng cấp, chứng chỉ** (ví dụ: trường học cấp bằng dưới dạng NFT để tránh giả mạo). Nhiều dự án đang thử nghiệm dùng NFT cho bất động sản, vật phẩm xa xỉ (mỗi món hàng hiệu có NFT đi kèm chứng nhận quyền sở hữu).
+* **Giới thiệu OpenSea:** OpenSea là **chợ NFT phi tập trung lớn nhất hiện nay**. Tưởng tượng như “eBay cho NFT” – người dùng có thể kết nối ví (Metamask, v.v.), duyệt qua hàng triệu NFT trên nhiều blockchain (Ethereum, Polygon, Solana…), và mua/bán đấu giá dễ dàng. OpenSea ra mắt năm 2017, tiên phong tạo nơi giao dịch NFT thân thiện. Hiện OpenSea có hàng triệu người dùng và doanh số hàng tỷ USD, chiếm thị phần lớn trong thị trường NFT.
+* **Cách OpenSea hoạt động (ở mức cơ bản):** OpenSea không nắm giữ NFT của người dùng (non-custodial). Người bán **mint** (đúc) NFT hoặc đăng NFT sẵn có của họ lên OpenSea (thực chất NFT nằm trong ví người bán cho đến khi bán). Người mua duyệt các mục và có thể mua ngay với giá niêm yết hoặc đặt giá đấu giá. Giao dịch thực hiện bằng hợp đồng thông minh: khi mua, tiền (thường là ETH) từ ví người mua chuyển thẳng vào ví người bán, đồng thời NFT chuyển ngược lại – tất cả ghi nhận trên blockchain, OpenSea chỉ là giao diện trung gian. Mỗi giao dịch, OpenSea thu một khoản phí (khoảng 2.5%).
+* **Tại sao NFT quan trọng trong Web3:**
+
+  * NFT đem lại **quyền sở hữu thực sự cho tài sản số** – điều trước đây khó thực hiện. Trong Web2, mua vật phẩm game hay item kỹ thuật số thường chỉ là “giấy phép sử dụng”, công ty game có thể thu hồi. Với NFT, người dùng sở hữu vật phẩm trong ví riêng, tự do mua bán mà không ai cản trở.
+  * **Trao quyền cho nhà sáng tạo:** Nghệ sĩ, nhà làm game, nhà xuất bản nội dung có thể tiếp cận khán giả trực tiếp, bán sản phẩm không qua trung gian và kiếm thu nhập bền vững (ví dụ: nhận royalty tự động). Họ cũng có thể gây quỹ bằng cách bán NFT (ví dụ ban nhạc bán NFT album kèm quyền lợi cho fan).
+  * **Xây dựng cộng đồng và nền kinh tế mới:** Nhiều NFT kèm theo cộng đồng người sở hữu – tạo mô hình **Cộng đồng sở hữu (community-owned)**, fans trở thành người đồng hành chứ không chỉ khách hàng. NFT cũng là viên gạch cho **metaverse** – thế giới ảo nơi mọi vật phẩm, đất đai, danh tính đều có thể xác thực bằng NFT.
+  * **Thách thức:** Dĩ nhiên, NFT cũng gặp vấn đề: nhiều dự án lừa đảo, *rug pull*; vấn đề bản quyền khi có người đúc NFT từ tác phẩm không phải của họ; và bong bóng giá có thể sụp đổ. Nhưng bất chấp điều đó, công nghệ NFT vẫn được xem là **bước đột phá** trong việc **số hóa tài sản** và sẽ tiếp tục tiến hóa.
+
+### Cấu trúc buổi học
+
+1. **Khởi động (5 phút):** Đưa ra một câu hỏi vui: *“Nếu bạn có một bức tranh kỹ thuật số, làm sao chứng minh nó là bản chính và chỉ bạn sở hữu?”* – Dẫn dắt vào khái niệm NFT. Có thể cho lớp xem một hình ảnh NFT nổi tiếng (ví dụ hình *Bored Ape Yacht Club*) và hỏi: *“Theo bạn tại sao hình khỉ này lại có người mua giá hàng trăm ngàn đô?”* để kích thích tò mò.
+2. **Định nghĩa & giải thích (10 phút):** Trình bày khái niệm NFT. Bắt đầu bằng định nghĩa ngắn gọn (như trên). Giải thích thuật ngữ “non-fungible” bằng cách so sánh với vật hữu hình: tiền, vàng (fungible) vs tranh, sưu tập (non-fungible). Nhấn mạnh **NFT không phải file hình ảnh**, mà là **token trên blockchain** chứa **bằng chứng sở hữu và liên kết đến file**. Đưa ví dụ Beeple bán tranh qua NFT để minh họa giá trị của chứng nhận số.
+3. **Minh họa trực quan (10 phút):** Giảng viên có thể mở trang OpenSea trên máy chiếu, duyệt một bộ sưu tập NFT phổ biến (vd: xem trang của bộ Bored Ape hoặc một NFT nghệ thuật). Chỉ cho học viên các thông tin trên trang NFT: hình ảnh, mô tả, chủ sở hữu hiện tại, lịch sử giá bán, số lượng, v.v. Minh họa cách bấm mua (tới bước cuối cùng nhưng không thực hiện giao dịch thực). Nếu có thể, cho xem một ví dụ **mint NFT**: chẳng hạn chụp một bức ảnh đơn giản, và mô tả quy trình (thông qua OpenSea có chế độ lazy minting miễn phí gas) để tạo NFT đó.
+4. **Câu chuyện & ứng dụng (15 phút):** Kể một vài câu chuyện tiêu biểu:
+
+   * Chuyện Beeple và **đấu giá Christie’s**: giúp học viên thấy NFT đã bước vào lĩnh vực nghệ thuật cao cấp.
+   * Chuyện **CryptoKitties** clog network: NFT đầu tiên gây tắc nghẽn Ethereum, minh họa cả tiềm năng và thách thức.
+   * Chuyện một game thủ kiếm tiền từ bán NFT vật phẩm game (vd: một người Philippines mua nhà nhờ chơi Axie Infinity năm 2021) – tạo sự hứng thú về **play-to-earn**.
+   * Thảo luận ngắn: *“Theo bạn NFT chỉ là trào lưu nhất thời hay sẽ hữu ích lâu dài?”* – Lắng nghe vài ý kiến để tăng tính tương tác.
+5. **Thảo luận mở (10 phút):** Sử dụng các câu hỏi gợi ý bên dưới, để học viên suy nghĩ sâu hơn: Tại sao ai đó mua NFT chứ không chỉ tải file? NFT có thể ứng dụng vào đâu khác? Giảng viên khuyến khích tranh luận, và điều phối để không sa đà (giữ thời gian).
+6. **Tóm tắt (5 phút):** Kết luận những ý chính: NFT = quyền sở hữu tài sản số, được đảm bảo bởi blockchain (minh bạch, không thể giả). Nhấn mạnh **ý nghĩa cốt lõi**: *lần đầu tiên, tài sản số có thể được trao đổi tự do như tài sản vật lý*, mở ra kinh tế số mới. Liên hệ tới buổi sau: *“NFT sôi động như vậy cũng nhờ các nền tảng phi tập trung hỗ trợ giao dịch, ví dụ như OpenSea mà chúng ta đã thấy. Lớp tới chúng ta sẽ bàn sâu hơn về tính chất **permissionless** – ai cũng có thể tham gia, qua ví dụ một nền tảng thú vị là Pump.fun.”*
+
+### Tài nguyên giảng dạy
+
+* **Video ngắn:** *“2 phút hiểu ngay NFT là gì – NFT có gì mà hot đến thế?”* (Coin68 TV) – video tiếng Việt cực ngắn gọn giải thích khái niệm NFT và lý do gây sốt. Phù hợp để chiếu đầu buổi giúp học viên hình dung nhanh.
+* **Bài viết dễ hiểu:** *“NFT là gì? Những yếu tố giúp NFT trở thành cơn sốt toàn cầu”* (FPT Shop blog) – ngôn ngữ phổ thông, giải thích NFT và một số ứng dụng, thích hợp cho người mới bắt đầu.
+* **Bài viết chuyên sâu:** *“NFT là gì? Toàn tập cơn sốt về NFT”* (BlockchainWork) – tổng hợp nhiều khía cạnh NFT, từ định nghĩa đến thị trường, trường hợp sử dụng. Giảng viên có thể lấy số liệu cập nhật từ đây (ví dụ doanh số NFT năm 2021, 2022).
+* **Website thực hành:** **OpenSea.io** – giảng viên nên tự chuẩn bị duyệt trước trang này, chọn vài ví dụ NFT nổi bật để demo. Nếu lo ngại sự cố mạng, nên chụp sẵn một số ảnh màn hình về giao diện NFT trên OpenSea để trình bày offline.
+* **Tool minh họa:** Trang **etherscan.io/token/ID** – dùng để cho học viên thấy một NFT cụ thể trên blockchain (ví dụ Etherscan có mục ERC-721 token, xem metadata). Tuy nhiên, với người mới có thể không cần đi sâu, chỉ dùng nếu muốn minh họa tính minh bạch: “mọi NFT đều truy xuất công khai được”.
+
+### Hướng dẫn giảng dạy
+
+* **Tránh thuật ngữ phức tạp:** Nhiều người mới dễ nhầm lẫn “NFT = ảnh JPEG đắt tiền”. Giảng viên nên làm rõ: ảnh chỉ là **nội dung gắn với NFT**, còn **NFT bản chất là token**. Hãy dùng cách diễn đạt gần gũi: *“NFT giống như sổ đỏ, còn bức tranh số là ngôi nhà – ai cầm sổ đỏ (NFT) thì được công nhận là chủ ngôi nhà (tác phẩm số).”*
+* **Tạo hứng thú với ví dụ thực tế:** Nếu có điều kiện, giảng viên có thể **tạo một NFT vui** dành cho công ty (vd: một meme vui trong công ty) trước buổi học và liệt kê nó trên OpenSea testnet. Trong lớp, mở ra NFT đó, chỉ cho mọi người thấy “Chủ sở hữu: giảng viên, lịch sử: vừa tạo hôm qua”. Tuyên bố sẽ tặng NFT đó cho một học viên may mắn chẳng hạn. Hoạt động này tạo sự *hands-on* và khiến khái niệm NFT trở nên sống động.
+* **Nhấn mạnh giá trị và rủi ro:** Hãy công bằng khi truyền đạt: NFT có **tiềm năng lớn** nhưng cũng **gây tranh cãi**. Khi giải thích tại sao ai đó bỏ tiền mua NFT, đưa các lý do: sưu tầm, hỗ trợ nghệ sĩ, kỳ vọng tăng giá, khoe địa vị (xài avatar độc)... Đồng thời, lưu ý học viên: *“Không phải mọi NFT đều đáng giá – rất nhiều dự án NFT mất giá trị sau cơn sốt. Quan trọng là công nghệ NFT thì sẽ còn ứng dụng lâu dài.”*
+* **Tương tác với đối tượng đa dạng:** Designer có thể sẽ quan tâm cách bảo vệ bản quyền, kiếm tiền từ tác phẩm – hãy nhấn mạnh NFT giải quyết được vấn đề **sao chép tràn lan** và tạo nguồn thu mới (royalty tự động). Developer có thể hỏi về chuẩn token – có thể giải thích ngắn về ERC-721, ERC-1155, nhưng tránh quá chi tiết code. QA có thể hứng thú với việc làm sao đảm bảo NFT không bị nhân bản – giải thích cơ chế **ID duy nhất trên blockchain**.
+* **Sử dụng số liệu mới nhất:** Thị trường NFT biến động nhanh, nên chuẩn bị vài con số cập nhật (ví dụ: tổng volume NFT 2021 đạt bao nhiêu tỷ, sau đó 2022 giảm ra sao) để người học có cái nhìn thực tế. Tuy nhiên đừng sa đà số liệu, chỉ dùng để minh họa xu hướng.
+
+### Câu hỏi thảo luận gợi ý
+
+* **Tại sao người ta bỏ tiền mua một NFT hình ảnh mà họ có thể xem miễn phí trên internet?** – Câu hỏi then chốt để học viên tự suy nghĩ về **quyền sở hữu vs quyền xem**. Mong đợi họ sẽ nói: vì muốn **sở hữu bản gốc**, vì **hỗ trợ tác giả**, vì **đầu cơ**, hoặc vì NFT có **giá trị sử dụng** (ví dụ NFT game có ích trong game). Giảng viên sẽ chốt: sở hữu NFT = có chứng nhận sở hữu được cộng đồng công nhận, giống như sở hữu bức tranh gốc dù ai cũng có thể chụp ảnh nó.
+* **NFT có thể ứng dụng vào lĩnh vực nào ngoài nghệ thuật và game?** – Khuyến khích học viên sáng tạo ý tưởng: bằng đại học số, sổ đỏ nhà đất, hồ sơ y tế cá nhân (mã hóa riêng tư), vé máy bay/vé hòa nhạc (chống vé giả và cho phép chuyển nhượng)… Qua đó cho thấy NFT không chỉ là trào lưu nghệ thuật mà còn có giá trị thực tiễn.
+* **Làm NFT có khiến mọi thứ số hóa trở nên có giá tiền không?** – Câu này để thảo luận về *giá trị thật vs bong bóng*. Người học có thể nêu ý kiến hoài nghi: “chỉ là bong bóng đầu cơ”. Giảng viên nên trung lập: thừa nhận có bong bóng, nhưng hướng họ nghĩ đến **giá trị nền tảng**: quyền sở hữu, ứng dụng công nghệ – đó mới là lâu dài.
+* **Nếu tôi là một designer/ph photographer, tôi có nên bán tác phẩm qua NFT? Cần lưu ý gì?** – Câu hỏi hướng tới nhóm designer. Câu trả lời mong đợi: NFT giúp tiếp cận khách hàng toàn cầu, nhưng cần xây dựng cộng đồng, marketing, và cẩn trọng vấn đề bản quyền (nếu tác phẩm số dễ bị người khác lấy mint trước). Giảng viên có thể gợi ý: nhiều nghệ sĩ độc lập đã kiếm được tiền nhờ NFT, nhưng cũng có nhiều cạnh tranh – cần tìm *thị trường ngách* và chất lượng.
+* **Bạn nghĩ NFT và tài sản ảo sẽ ảnh hưởng thế giới tương lai thế nào?** – Câu hỏi mở, phù hợp kết thúc buổi. Học viên có thể tưởng tượng về metaverse: khi đó mọi vật phẩm, danh tính đều token hóa, con người có thể sưu tầm tài sản ảo như tài sản thật. Cũng có thể có ý kiến tiêu cực: “ảo quá, bong bóng”. Hãy ghi nhận mọi ý kiến và kết luận: NFT là một phần của bức tranh Web3, thời gian sẽ trả lời mức độ ảnh hưởng, nhưng nguyên lý về xác thực tài sản số thì chắc chắn sẽ còn được sử dụng.
+
+---
